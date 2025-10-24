@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Produk furniture berkualitas dari PT. Bene - Meja, Kursi, Lemari, Kasur, Sofa, dan Rak Penyimpanan"
+    />
+    <meta
+      name="keywords"
+      content="furniture, meja, kursi, lemari, kasur, sofa, rak"
+    />
+    <title>Products - Bene Interio Global</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="image/favicon.png" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styleproduct.css" />
+  </head>
+
+  <body>
+    <!-- ==================== NAVBAR ==================== -->
+    <nav class="navbar">
+      <div class="container">
+        <a href="index.html" aria-label="Home">
+          <img
+            src="image/Untitled design - 2025-09-05T132032.516.png"
+            class="logo"
+            alt="Bene Logo"
+          />
+        </a>
+        <ul class="menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">Tentang</a></li>
+          <li><a href="product.html" class="active">Produk</a></li>
+          <li><a href="portofolio.html">Portfolio</a></li>
+          <li><a href="contact.html">Kontak Kami</a></li>
+        </ul>
+        <form class="example" id="navbarSearchForm">
+          <input
+            type="text"
+            placeholder="Search.."
+            name="search"
+            id="navbarSearchInput"
+            aria-label="Search products"
+          />
+          <button type="submit" aria-label="Submit search">
+            <i class="fa fa-search"></i>
+          </button>
+        </form>
+        <button class="tombol" id="burger" aria-label="Toggle menu">
+          &#9776;
+        </button>
+      </div>
+    </nav>
+    <!-- ==================== BREADCRUMB ==================== -->
+    <div class="breadcrumb-container">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="separator">/</span>
+          <span class="current">Products</span>
+        </nav>
+      </div>
+    </div>
+
+    <!-- ==================== ROOM CATEGORY FILTER ==================== -->
+    <section class="room-category-section">
+      <div class="container">
+        <h2 class="room-category-title">
+          <i class="fas fa-door-open"></i> Filter by Room
+        </h2>
+        <div class="room-category-filter">
+          <button class="room-category-btn active" data-room="all">
+            <i class="fas fa-th"></i>
+            <span>All Rooms</span>
+          </button>
+          <button class="room-category-btn" data-room="bedroom">
+            <i class="fas fa-bed"></i>
+            <span>Bedroom</span>
+          </button>
+          <button class="room-category-btn" data-room="livingroom">
+            <i class="fas fa-couch"></i>
+            <span>Living Room</span>
+          </button>
+          <button class="room-category-btn" data-room="kitchenroom">
+            <i class="fas fa-utensils"></i>
+            <span>Kitchen</span>
+          </button>
+          <button class="room-category-btn" data-room="bathroom">
+            <i class="fas fa-bath"></i>
+            <span>Bathroom</span>
+          </button>
+          <button class="room-category-btn" data-room="officeroom">
+            <i class="fas fa-briefcase"></i>
+            <span>Office</span>
+          </button>
+          <button class="room-category-btn" data-room="classroom">
+            <i class="fas fa-chalkboard-teacher"></i>
+            <span>Classroom</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CATEGORY TABS ==================== -->
+    <section class="category-tabs-container">
+      <div class="container">
+        <div class="category-tabs">
+          <div
+            class="category-card"
+            data-category="meja"
+            role="button"
+            tabindex="0"
+          >
+            <img src="image/table.png" alt="Meja Icon" />
+            <h3>MEJA</h3>
+          </div>
+          <div
+            class="category-card"
+            data-category="kursi"
+            role="button"
+            tabindex="0"
+          >
+            <img src="image/judge-chair.png" alt="Kursi Icon" />
+            <h3>KURSI</h3>
+          </div>
+          <div
+            class="category-card"
+            data-category="kasur-sofa"
+            role="button"
+            tabindex="0"
+          >
+            <img src="image/bedroom.png" alt="Kasur Icon" />
+            <h3>KASUR</h3>
+          </div>
+          <div
+            class="category-card"
+            data-category="rak-penyimpanan"
+            role="button"
+            tabindex="0"
+          >
+            <img src="image/cupboard.png" alt="Rak Icon" />
+            <h3>RAK</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== MAIN CONTENT ==================== -->
+    <main class="products-main">
+      <div class="container">
+        <div class="products-layout">
+          <!-- ==================== SIDEBAR ==================== -->
+          <aside class="sidebar">
+            <!-- Category Section -->
+            <div class="sidebar-section">
+              <h3 class="sidebar-title">Category</h3>
+              <ul class="category-list">
+                <li class="category-item">
+                  <a href="#" class="category-link" data-category="meja">
+                    <span>Meja</span>
+                    <i class="fas fa-chevron-right"></i>
+                  </a>
+                </li>
+                <li class="category-item">
+                  <a href="#" class="category-link" data-category="kursi">
+                    <span>Kursi</span>
+                    <i class="fas fa-chevron-right"></i>
+                  </a>
+                </li>
+                <li class="category-item">
+                  <a href="#" class="category-link" data-category="lemari">
+                    <span>Lemari</span>
+                    <i class="fas fa-chevron-right"></i>
+                  </a>
+                </li>
+                <li class="category-item">
+                  <a href="#" class="category-link" data-category="kasur-sofa">
+                    <span>Kasur & Sofa</span>
+                    <i class="fas fa-chevron-right"></i>
+                  </a>
+                </li>
+                <li class="category-item">
+                  <a
+                    href="#"
+                    class="category-link dropdown-toggle"
+                    data-category="rak-penyimpanan"
+                  >
+                    <span>Rak Penyimpanan</span>
+                    <i class="fas fa-chevron-down"></i>
+                  </a>
+                  <ul class="subcategory-list">
+                    <li>
+                      <a
+                        href="#"
+                        class="subcategory-link"
+                        data-category="rak-sepatu"
+                      >
+                        Rak Sepatu
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="subcategory-link"
+                        data-category="rak-baju"
+                      >
+                        Rak Baju
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="subcategory-link"
+                        data-category="rak-tas"
+                      >
+                        Rak Tas
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Room Filter Sidebar -->
+            <div class="sidebar-section">
+              <h3 class="sidebar-title">
+                <i class="fas fa-door-open"></i> Filter by Room
+              </h3>
+              <ul class="room-list">
+                <li class="room-item">
+                  <button class="room-link active" data-room="all">
+                    <i class="fas fa-th"></i>
+                    <span>All Rooms</span>
+                  </button>
+                </li>
+                <li class="room-item">
+                  <button class="room-link" data-room="bedroom">
+                    <i class="fas fa-bed"></i>
+                    <span>Bedroom</span>
+                  </button>
+                </li>
+                <li class="room-item">
+                  <button class="room-link" data-room="livingroom">
+                    <i class="fas fa-couch"></i>
+                    <span>Living Room</span>
+                  </button>
+                </li>
+                <li class="room-item">
+                  <button class="room-link" data-room="kitchenroom">
+                    <i class="fas fa-utensils"></i>
+                    <span>Kitchen</span>
+                  </button>
+                </li>
+                <li class="room-item">
+                  <button class="room-link" data-room="bathroom">
+                    <i class="fas fa-bath"></i>
+                    <span>Bathroom</span>
+                  </button>
+                </li>
+                <li class="room-item">
+                  <button class="room-link" data-room="officeroom">
+                    <i class="fas fa-briefcase"></i>
+                    <span>Office</span>
+                  </button>
+                </li>
+                <li class="room-item">
+                  <button class="room-link" data-room="classroom">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <span>Classroom</span>
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </aside>
+
+          <!-- ==================== PRODUCTS CONTENT ==================== -->
+          <div class="products-content">
+            <!-- Products Header -->
+            <div class="products-header">
+              <h1 class="products-title">PRODUCTS</h1>
+
+              <div class="products-controls">
+                <!-- Search Box -->
+                <div class="search-box">
+                  <i class="fas fa-search"></i>
+                  <input
+                    type="text"
+                    placeholder="Search products..."
+                    class="search-input"
+                    id="productSearch"
+                    aria-label="Search products"
+                  />
+                  <button class="search-btn" id="mainSearchBtn">Search</button>
+                </div>
+
+                <!-- Filter Buttons -->
+                <div class="filter-buttons">
+                  <button class="filter-btn active" data-filter="new">
+                    NEW
+                  </button>
+                  <button class="filter-btn" data-filter="bestseller">
+                    BEST SELLERS
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Active Filters Display -->
+            <div
+              class="active-filters"
+              id="activeFilters"
+              style="display: none"
+            >
+              <span class="filter-label">Active Filters:</span>
+              <div class="filter-tags" id="filterTags"></div>
+              <button class="clear-filters-btn" onclick="resetFilters()">
+                <i class="fas fa-times"></i> Clear All
+              </button>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="products-grid" id="productsGrid">
+              <!-- Products will be rendered here dynamically by JavaScript -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- ==================== FOOTER SECTION ==================== -->
+    <footer class="bene-footer">
+      <!-- Footer Top -->
+      <div class="bene-footer-top">
+        <!-- Brand Column -->
+        <div class="bene-footer-col bene-footer-brand">
+          <img
+            src="image/Untitled design - 2025-09-05T132032.516.png"
+            alt="Bene Logo"
+            class="bene-footer-logo"
+          />
+          <p class="bene-footer-desc">
+            Penyedia furnitur berkualitas tinggi dengan konsep one-stop shopping
+            untuk kebutuhan hunian, kantor, dan ruang komersial.
+          </p>
+          <div class="bene-footer-social">
+            <span>Follow Us</span>
+            <a
+              href="#"
+              aria-label="Instagram"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fa fa-instagram"></i>
+            </a>
+            <a
+              href="#"
+              aria-label="WhatsApp"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fa fa-whatsapp"></i>
+            </a>
+            <a
+              href="#"
+              aria-label="Email"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fa fa-envelope"></i>
+            </a>
+            <a
+              href="#"
+              aria-label="Facebook"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fa fa-facebook"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links Column -->
+        <div class="bene-footer-col bene-footer-links">
+          <h4>Quick links</h4>
+          <ul>
+            <li><a href="index.html">Tentang kami</a></li>
+            <li>
+              <a
+                href="product.html"
+                class="footer-category"
+                data-category="all"
+              >
+                Produk
+              </a>
+            </li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="portofolio.html">Portofolio</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+
+        <!-- Category Column -->
+        <div class="bene-footer-col bene-footer-category">
+          <h4>Kategori Produk</h4>
+          <ul>
+            <li>
+              <a href="#" class="footer-category" data-category="kursi">
+                Kursi
+              </a>
+            </li>
+            <li>
+              <a href="#" class="footer-category" data-category="meja">
+                Meja
+              </a>
+            </li>
+            <li>
+              <a href="#" class="footer-category" data-category="kasur-sofa">
+                Sofa
+              </a>
+            </li>
+            <li>
+              <a href="#" class="footer-category" data-category="kasur-sofa">
+                Tempat Tidur
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Contact Column -->
+        <div class="bene-footer-col bene-footer-contact">
+          <h4>Hubungi kami</h4>
+          <ul>
+            <li>
+              <i class="fa fa-map-marker"></i>
+              <span>Alamat<br />Jakarta Pusat, DKI Jakarta, Indonesia</span>
+            </li>
+            <li>
+              <i class="fa fa-phone"></i>
+              <span>Telepon<br />+62 21 XXXX XXXX</span>
+            </li>
+            <li>
+              <i class="fa fa-envelope"></i>
+              <span>Email<br />info@beneinterio.com</span>
+            </li>
+            <li>
+              <i class="fa fa-clock-o"></i>
+              <span>Jam Operasional<br />Senin - Jumat: 08:00 – 17:00 WIB</span>
+            </li>
+          </ul>
+          <a
+            href="https://wa.me/62218888888"
+            class="bene-footer-btn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fa fa-phone"></i> Hubungi Sekarang
+          </a>
+        </div>
+      </div>
+
+      <!-- Newsletter Update -->
+      <div class="bene-footer-update">
+        <div class="bene-footer-update-left">
+          <strong>Dapatkan Update Terbaru</strong>
+          <div class="bene-footer-update-desc">
+            Berlangganan newsletter untuk mendapatkan informasi produk dan promo
+            terbaru
+          </div>
+        </div>
+        <form class="bene-footer-update-form" id="footerNewsletterForm">
+          <input
+            type="email"
+            placeholder="Masukkan email"
+            id="footerNewsletterEmail"
+            aria-label="Email address"
+            required
+          />
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="bene-footer-bottom">
+        © 2024 PT. Bene Interio Global. All rights reserved.
+      </div>
+    </footer>
+
+    <!-- ==================== JAVASCRIPT ==================== -->
+    <script src="js/products.js"></script>
+  </body>
+</html>

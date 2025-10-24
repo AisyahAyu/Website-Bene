@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portofolio | béne</title>
+    <meta
+      name="description"
+      content="Portofolio proyek interior modern dan fungsional oleh béne."
+    />
+    <meta property="og:title" content="Portofolio | béne" />
+    <meta
+      property="og:description"
+      content="Portofolio proyek interior modern dan fungsional oleh béne."
+    />
+    <meta property="og:type" content="website" />
+    <link rel="stylesheet" href="css/styleportofolio.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container">
+        <a href="index.html" aria-label="Home">
+          <img
+            src="image/Untitled design - 2025-09-05T132032.516.png"
+            class="logo"
+            alt="Bene Logo"
+          />
+        </a>
+        <ul class="menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">Tentang</a></li>
+          <li><a href="product.html">Produk</a></li>
+          <li><a href="portofolio.html" class="active">Portfolio</a></li>
+          <li><a href="contact.html">Kontak Kami</a></li>
+        </ul>
+        <form
+          class="example"
+          id="searchForm"
+          onsubmit="return handleSearch(event)"
+        >
+          <input
+            type="text"
+            placeholder="Search.."
+            name="search"
+            id="searchInput"
+          />
+          <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+        <button class="tombol" id="burger">&#9776;</button>
+      </div>
+    </nav>
+
+    <section class="hero" aria-label="Hero">
+      <div class="title">
+        <h1>Portfolio</h1>
+        <div class="breadcrumb">Home / Portfolio</div>
+      </div>
+
+      <!-- ornaments -->
+      <div class="orn" style="top: 16%; left: 5%">
+        <img src="image/project1.jpg" alt="interior project 1" />
+      </div>
+      <div class="orn" style="top: 12%; right: 8%; transform: rotate(3deg)">
+        <img src="image/project2.jpg" alt="interior project 2" />
+      </div>
+      <div class="orn" style="bottom: 12%; left: 12%">
+        <img src="image/project3.jpg" alt="interior project 3" />
+      </div>
+      <div class="orn" style="bottom: 8%; right: 12%; transform: rotate(-5deg)">
+        <img src="image/project4.jpg" alt="interior project 4" />
+      </div>
+    </section>
+
+    <main id="main" class="container">
+      <!-- Sections injected by JS -->
+      <section
+        id="this-year"
+        class="section"
+        aria-labelledby="this-year-title"
+      ></section>
+      <section
+        id="last-year"
+        class="section"
+        aria-labelledby="last-year-title"
+      ></section>
+
+      <section class="section see-another">
+        <div class="section-head">
+          <h2>See another?</h2>
+        </div>
+        <div class="year-picker">
+          <button
+            id="yearBtn"
+            class="btn select-year-btn"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            Select Year
+          </button>
+          <div
+            id="yearPopover"
+            class="popover"
+            role="menu"
+            aria-labelledby="yearBtn"
+          >
+            <ul id="yearList"></ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bene-footer">
+      <!-- Footer Top -->
+      <div class="bene-footer-top">
+        <!-- Brand Column -->
+        <div class="bene-footer-col bene-footer-brand">
+          <img
+            src="image/Untitled design - 2025-09-05T132032.516.png"
+            alt="Bene Logo"
+            class="bene-footer-logo"
+          />
+          <p class="bene-footer-desc">
+            Penyedia furnitur berkualitas tinggi dengan konsep one-stop shopping
+            untuk kebutuhan hunian, kantor, dan ruang komersial.
+          </p>
+          <div class="bene-footer-social">
+            <span>Follow Us</span>
+            <a
+              href="#"
+              aria-label="Instagram"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a
+              href="#"
+              aria-label="WhatsApp"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+            <a
+              href="#"
+              aria-label="Email"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fa fa-envelope"></i>
+            </a>
+            <a
+              href="#"
+              aria-label="Facebook"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fa-brands fa-facebook"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links Column -->
+        <div class="bene-footer-col bene-footer-links">
+          <h4>Quick links</h4>
+          <ul>
+            <li><a href="about.html">Tentang kami</a></li>
+            <li><a href="product.html">Produk</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="portofolio.html">Portofolio</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+
+        <!-- Category Column -->
+        <div class="bene-footer-col bene-footer-category">
+          <h4>Kategori Produk</h4>
+          <ul>
+            <li><a href="product.html?category=kursi">Kursi</a></li>
+            <li><a href="product.html?category=meja">Meja</a></li>
+            <li><a href="product.html?category=kasur-sofa">Sofa</a></li>
+            <li><a href="product.html?category=kasur-sofa">Tempat Tidur</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Column -->
+        <div class="bene-footer-col bene-footer-contact">
+          <h4>Hubungi kami</h4>
+          <ul>
+            <li>
+              <i class="fa fa-map-marker"></i>
+              <span>Alamat<br />Jakarta Pusat, DKI Jakarta, Indonesia</span>
+            </li>
+            <li>
+              <i class="fa fa-phone"></i>
+              <span>Telepon<br />+62 21 XXXX XXXX</span>
+            </li>
+            <li>
+              <i class="fa fa-envelope"></i>
+              <span>Email<br />info@beneinterio.com</span>
+            </li>
+            <li>
+              <i class="fa fa-clock-o"></i>
+              <span>Jam Operasional<br />Senin - Jumat: 08:00 – 17:00 WIB</span>
+            </li>
+          </ul>
+          <a
+            href="https://wa.me/62218888888"
+            class="bene-footer-btn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fa fa-phone"></i> Hubungi Sekarang
+          </a>
+        </div>
+      </div>
+
+      <!-- Newsletter Update -->
+      <div class="bene-footer-update">
+        <div class="bene-footer-update-left">
+          <strong>Dapatkan Update Terbaru</strong>
+          <div class="bene-footer-update-desc">
+            Berlangganan newsletter untuk mendapatkan informasi produk dan promo
+            terbaru
+          </div>
+        </div>
+        <form class="bene-footer-update-form" id="footerNewsletterForm">
+          <input
+            type="email"
+            placeholder="Masukkan email"
+            id="footerNewsletterEmail"
+            aria-label="Email address"
+            required
+          />
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="bene-footer-bottom">
+        © 2024 PT. Bene Interio Global. All rights reserved.
+      </div>
+    </footer>
+    <script>
+      // Handle search
+      function handleSearch(event) {
+        event.preventDefault();
+        const searchInput = document.getElementById("searchInput");
+        const searchQuery = searchInput?.value.trim();
+
+        if (searchQuery) {
+          window.location.href = `product.html?search=${encodeURIComponent(
+            searchQuery
+          )}`;
+        } else {
+          alert("⚠️ Mohon masukkan kata kunci pencarian");
+        }
+        return false;
+      }
+
+      document
+        .getElementById("searchForm")
+        ?.addEventListener("submit", handleSearch);
+
+      // Mobile menu toggle
+      document.getElementById("burger")?.addEventListener("click", function () {
+        document.querySelector(".menu")?.classList.toggle("aktif");
+      });
+
+      // Close menu when clicking outside
+      document.addEventListener("click", function (e) {
+        const menu = document.querySelector(".menu");
+        const burger = document.getElementById("burger");
+
+        if (window.innerWidth <= 768 && menu?.classList.contains("aktif")) {
+          if (!menu.contains(e.target) && !burger.contains(e.target)) {
+            menu.classList.remove("aktif");
+          }
+        }
+      });
+    </script>
+    <script>
+      // Handle search from portfolio page
+      function handleSearch(event) {
+        event.preventDefault();
+
+        const searchInput = document.getElementById("searchInput");
+        const searchQuery = searchInput.value.trim();
+
+        if (searchQuery) {
+          // Redirect ke halaman product dengan query parameter
+          window.location.href = `product.html?search=${encodeURIComponent(
+            searchQuery
+          )}`;
+        } else {
+          alert("⚠️ Mohon masukkan kata kunci pencarian");
+        }
+
+        return false;
+      }
+
+      // inline icons for usage in JS templates
+      const ICONS = {
+        location: `<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C8.686 2 6 4.686 6 8c0 5.25 6 14 6 14s6-8.75 6-14c0-3.314-2.686-6-6-6zm0 8.5A2.5 2.5 0 1 1 12 5.5a2.5 2.5 0 0 1 0 5z" fill="currentColor"/></svg>`,
+        calendar: `<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><path d="M7 2a1 1 0 0 1 1 1v1h8V3a1 1 0 1 1 2 0v1h1a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3h1V3a1 1 0 0 1 1-1zm13 9H4v9a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-9zM5 7a1 1 0 0 0-1 1v1h16V8a1 1 0 0 0-1-1H5z" fill="currentColor"/></svg>`,
+      };
+
+      // Mobile menu toggle
+      document.getElementById("burger").addEventListener("click", function () {
+        document.querySelector(".menu").classList.toggle("show");
+      });
+
+      // Newsletter subscription
+      document
+        .getElementById("subscribeBtn")
+        .addEventListener("click", function () {
+          const emailInput = document.getElementById("newsletterEmail");
+          const msgElement = document.getElementById("newsletterMsg");
+          const email = emailInput.value.trim();
+
+          if (email && validateEmail(email)) {
+            msgElement.textContent = "✅ Terima kasih telah berlangganan!";
+            msgElement.style.color = "#10b981";
+            emailInput.value = "";
+
+            setTimeout(() => {
+              msgElement.textContent = "";
+            }, 3000);
+          } else {
+            msgElement.textContent = "⚠️ Email tidak valid";
+            msgElement.style.color = "#ef4444";
+          }
+        });
+
+      // Email validation
+      function validateEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
+      }
+
+      // Close menu when clicking outside
+      document.addEventListener("click", function (e) {
+        const menu = document.querySelector(".menu");
+        const burger = document.getElementById("burger");
+
+        if (menu.classList.contains("show")) {
+          if (!menu.contains(e.target) && !burger.contains(e.target)) {
+            menu.classList.remove("show");
+          }
+        }
+      });
+    </script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Virtual Tour Detail | PT. Bene Interio Global</title>
+    <meta
+      name="description"
+      content="Detail Virtual Tour - PT. Bene Interio Global. Jelajahi ruang yang didesain secara profesional dengan pengalaman interaktif 360°."
+    />
+    <link rel="icon" type="image/png" href="image/favicon.png" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styleindex.css" />
+    <style>
+      /* Virtual Tour Detail Page Styles */
+      .vt-detail-container {
+        max-width: 1200px;
+        margin: 90px auto 0 auto;
+        padding: 30px 20px 70px 20px;
+        background: #fff;
+        border-radius: 24px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.09);
+        display: flex;
+        gap: 45px;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        min-height: 480px;
+        animation: fadeIn 1s;
+      }
+      .vt-detail-info {
+        flex: 1.2;
+        min-width: 280px;
+        padding-bottom: 14px;
+      }
+      .vt-detail-title {
+        font-size: 38px;
+        font-weight: 800;
+        color: #222;
+        margin-bottom: 10px;
+        letter-spacing: 1px;
+      }
+      .vt-detail-room {
+        font-size: 22px;
+        font-weight: 600;
+        color: #00bfa5;
+        margin-bottom: 16px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .vt-detail-desc {
+        font-size: 18px;
+        color: #444;
+        margin-bottom: 24px;
+        line-height: 1.7;
+      }
+      .vt-detail-tags {
+        margin-bottom: 24px;
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .vt-detail-tag {
+        background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+        padding: 7px 18px;
+        border-radius: 20px;
+        font-size: 13px;
+        color: #222;
+        font-weight: 600;
+        border: 1px solid #00bfa5;
+        transition: all 0.3s;
+      }
+      .vt-detail-tag:hover {
+        background: linear-gradient(135deg, #00bfa5 0%, #00e5cc 100%);
+        color: white;
+      }
+      .vt-detail-actions {
+        margin-top: 20px;
+        display: flex;
+        gap: 18px;
+        flex-wrap: wrap;
+      }
+      .vt-detail-btn {
+        padding: 14px 34px;
+        background: linear-gradient(135deg, #00bfa5 0%, #00e5cc 100%);
+        color: white;
+        border-radius: 28px;
+        font-size: 16px;
+        font-weight: 700;
+        text-decoration: none;
+        box-shadow: 0 4px 15px rgba(0, 191, 165, 0.2);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        transition: all 0.3s;
+        border: none;
+        cursor: pointer;
+      }
+      .vt-detail-btn:hover {
+        background: linear-gradient(135deg, #1daef7 0%, #1396d6 100%);
+        box-shadow: 0 8px 25px rgba(29, 174, 247, 0.18);
+        color: #fff;
+      }
+      .vt-detail-360 {
+        flex: 1.2;
+        min-width: 320px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+      }
+      .vt-detail-360 .vt-360-frame {
+        width: 100%;
+        max-width: 440px;
+        min-height: 280px;
+        aspect-ratio: 16/9;
+        background: #eee;
+        border-radius: 14px;
+        overflow: hidden;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+      .vt-detail-360 .vt-360-frame img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 14px;
+        transition: transform 0.4s;
+        cursor: pointer;
+      }
+      .vt-detail-360 .vt-360-frame img:hover {
+        transform: scale(1.03);
+      }
+      .vt-detail-360 .vt-360-desc {
+        font-size: 15px;
+        color: #666;
+        text-align: center;
+        margin-top: 0;
+        line-height: 1.5;
+        max-width: 420px;
+      }
+      /* Responsive */
+      @media screen and (max-width: 1000px) {
+        .vt-detail-container {
+          flex-direction: column;
+          gap: 30px;
+        }
+        .vt-detail-360,
+        .vt-detail-info {
+          min-width: 0;
+        }
+        .vt-detail-title {
+          font-size: 28px;
+        }
+        .vt-detail-room {
+          font-size: 18px;
+        }
+        .vt-detail-desc {
+          font-size: 16px;
+        }
+      }
+      @media screen and (max-width: 600px) {
+        .vt-detail-container {
+          margin: 70px 4px 0 4px;
+          padding: 15px 6px 40px 6px;
+        }
+        .vt-detail-title {
+          font-size: 22px;
+        }
+        .vt-detail-room {
+          font-size: 15px;
+        }
+        .vt-detail-desc {
+          font-size: 13px;
+        }
+        .vt-detail-360 .vt-360-frame {
+          max-width: 100%;
+          min-height: 180px;
+        }
+      }
+      .navbar {
+        box-shadow: none;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAVBAR (reuse from index.html) -->
+    <nav class="navbar">
+      <div class="container">
+        <a href="index.html" aria-label="Home">
+          <img
+            src="image/Untitled design - 2025-09-05T132032.516.png"
+            class="logo"
+            alt="Bene Logo"
+          />
+        </a>
+        <ul class="menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">Tentang</a></li>
+          <li><a href="product.html">Produk</a></li>
+          <li><a href="portofolio.html">Portfolio</a></li>
+          <li><a href="contact.html">Kontak Kami</a></li>
+        </ul>
+        <form class="example" id="searchForm">
+          <input
+            type="text"
+            placeholder="Search.."
+            name="search"
+            id="searchInput"
+            aria-label="Search"
+          />
+          <button type="submit" aria-label="Submit search">
+            <i class="fa fa-search"></i>
+          </button>
+        </form>
+        <button class="tombol" id="burger" aria-label="Toggle menu">
+          &#9776;
+        </button>
+      </div>
+    </nav>
+
+    <!-- MAIN DETAIL SECTION -->
+    <main>
+      <div class="vt-detail-container">
+        <section class="vt-detail-info">
+          <div class="vt-detail-title">
+            <i class="fa fa-street-view"></i> Virtual Tour: Modern Living Room
+          </div>
+          <div class="vt-detail-room">
+            <i class="fa fa-home"></i> Modern Living Room
+          </div>
+          <div class="vt-detail-desc">
+            Nikmati pengalaman 360° di ruang tamu modern kami. Desain
+            kontemporer, furniture premium, dan tata ruang yang luas menciptakan
+            suasana nyaman dan stylish untuk keluarga maupun tamu. Teknologi
+            pencahayaan natural dan material berkualitas memberikan nuansa
+            hangat dan elegan.
+          </div>
+          <div class="vt-detail-tags">
+            <span class="vt-detail-tag">Contemporary</span>
+            <span class="vt-detail-tag">Premium Furniture</span>
+            <span class="vt-detail-tag">Open Space</span>
+            <span class="vt-detail-tag">Jakarta</span>
+          </div>
+          <div class="vt-detail-actions">
+            <a href="product.html?room=livingroom" class="vt-detail-btn"
+              ><i class="fa fa-cube"></i> Lihat Produk Terkait</a
+            >
+            <a href="contact.html" class="vt-detail-btn"
+              ><i class="fa fa-comments"></i> Konsultasi Desain</a
+            >
+            <a
+              href="https://wa.me/62218888888"
+              target="_blank"
+              class="vt-detail-btn"
+              ><i class="fa fa-whatsapp"></i> Hubungi Kami</a
+            >
+          </div>
+        </section>
+        <section class="vt-detail-360">
+          <div class="vt-360-frame">
+            <img
+              src="image/livingroom-tour.png"
+              alt="Modern Living Room Virtual Tour"
+            />
+            <!-- Icon play-circle dihapus -->
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- FOOTER (reuse from index.html) -->
+    <footer class="bene-footer">
+      <div class="bene-footer-top">
+        <div class="bene-footer-col bene-footer-brand">
+          <img
+            src="image/Untitled design - 2025-09-05T132032.516.png"
+            alt="Bene Logo"
+            class="bene-footer-logo"
+          />
+          <p class="bene-footer-desc">
+            Penyedia furnitur berkualitas tinggi dengan konsep one-stop shopping
+            untuk kebutuhan hunian, kantor, dan ruang komersial.
+          </p>
+          <div class="bene-footer-social">
+            <span>Follow Us</span>
+            <a href="#"><i class="fa fa-instagram"></i></a>
+            <a href="#"><i class="fa fa-whatsapp"></i></a>
+            <a href="#"><i class="fa fa-envelope"></i></a>
+            <a href="#"><i class="fa fa-facebook"></i></a>
+          </div>
+        </div>
+        <div class="bene-footer-col bene-footer-links">
+          <h4>Quick links</h4>
+          <ul>
+            <li><a href="about.html">Tentang kami</a></li>
+            <li><a href="product.html">Produk</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="portofolio.html">Portofolio</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="bene-footer-col bene-footer-category">
+          <h4>Kategori Produk</h4>
+          <ul>
+            <li><a href="product.html?category=kursi">Kursi</a></li>
+            <li><a href="product.html?category=meja">Meja</a></li>
+            <li><a href="product.html?category=kasur-sofa">Sofa</a></li>
+            <li><a href="product.html?category=kasur-sofa">Tempat Tidur</a></li>
+          </ul>
+        </div>
+        <div class="bene-footer-col bene-footer-contact">
+          <h4>Hubungi kami</h4>
+          <ul>
+            <li>
+              <i class="fa fa-map-marker"></i>
+              <span>Alamat<br />Jakarta Pusat, DKI Jakarta, Indonesia</span>
+            </li>
+            <li>
+              <i class="fa fa-phone"></i>
+              <span>Telepon<br />+62 21 XXXX XXXX</span>
+            </li>
+            <li>
+              <i class="fa fa-envelope"></i>
+              <span>Email<br />info@beneinterio.com</span>
+            </li>
+            <li>
+              <i class="fa fa-clock-o"></i>
+              <span>Jam Operasional<br />Senin - Jumat: 08:00 – 17:00 WIB</span>
+            </li>
+          </ul>
+          <a href="https://wa.me/62218888888" class="bene-footer-btn"
+            ><i class="fa fa-phone"></i> Hubungi Sekarang</a
+          >
+        </div>
+      </div>
+      <div class="bene-footer-update">
+        <div class="bene-footer-update-left">
+          <strong>Dapatkan Update Terbaru</strong>
+          <div class="bene-footer-update-desc">
+            Berlangganan newsletter untuk mendapatkan informasi produk dan promo
+            terbaru
+          </div>
+        </div>
+        <form class="bene-footer-update-form" id="newsletterForm">
+          <input
+            type="email"
+            placeholder="Masukkan email"
+            aria-label="Email address"
+            required
+          />
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+      <div class="bene-footer-bottom">
+        © 2024 PT. Bene Interio Global. All rights reserved.
+      </div>
+    </footer>
+
+    <!-- JS Navbar, Search, Newsletter, DAN VIRTUAL TOUR DINAMIS -->
+    <script>
+      // Data untuk setiap virtual tour
+      const tourData = {
+        livingroom: {
+          title: "Virtual Tour: Modern Living Room",
+          room: "Modern Living Room",
+          desc: "Nikmati pengalaman 360° di ruang tamu modern kami. Desain kontemporer, furniture premium, dan tata ruang yang luas menciptakan suasana nyaman dan stylish untuk keluarga maupun tamu. Teknologi pencahayaan natural dan material berkualitas memberikan nuansa hangat dan elegan.",
+          tags: ["Contemporary", "Premium Furniture", "Open Space", "Jakarta"],
+          image: "image/livingroom-tour.png",
+          produkHref: "product.html?room=livingroom",
+        },
+        executiveoffice: {
+          title: "Virtual Tour: Executive Office",
+          room: "Executive Office",
+          desc: "Jelajahi ruang kantor eksekutif dengan desain profesional, furniture ergonomis, dan atmosfer produktif. Solusi pencahayaan modern dan tata ruang efisien mendukung kenyamanan kerja dan kesan prestisius.",
+          tags: ["Ergonomis", "Professional", "Modern Lighting", "Jakarta"],
+          image: "image/livingroom-tour.png",
+          produkHref: "product.html?room=officeroom",
+        },
+        // Tambah virtual tour lain di sini jika perlu
+      };
+
+      function loadTourDetail() {
+        const params = new URLSearchParams(window.location.search);
+        const tour = params.get("tour") || "livingroom";
+        const data = tourData[tour] || tourData["livingroom"];
+
+        document.querySelector(
+          ".vt-detail-title"
+        ).innerHTML = `<i class="fa fa-street-view"></i> ${data.title}`;
+        document.querySelector(
+          ".vt-detail-room"
+        ).innerHTML = `<i class="fa fa-home"></i> ${data.room}`;
+        document.querySelector(".vt-detail-desc").textContent = data.desc;
+
+        // Tags
+        const tagsHTML = data.tags
+          .map((tag) => `<span class="vt-detail-tag">${tag}</span>`)
+          .join("");
+        document.querySelector(".vt-detail-tags").innerHTML = tagsHTML;
+
+        // Gambar
+        document.querySelector(".vt-360-frame img").src = data.image;
+        document.querySelector(".vt-360-frame img").alt =
+          data.room + " Virtual Tour";
+
+        // Link Produk Terkait
+        document
+          .querySelectorAll(".vt-detail-btn")[0]
+          .setAttribute("href", data.produkHref);
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        loadTourDetail();
+
+        // Navbar Burger
+        document
+          .getElementById("burger")
+          ?.addEventListener("click", function () {
+            document.querySelector(".menu")?.classList.toggle("aktif");
+          });
+        // Search Form
+        document
+          .getElementById("searchForm")
+          ?.addEventListener("submit", function (event) {
+            event.preventDefault();
+            const searchInput = document.getElementById("searchInput");
+            const searchQuery = searchInput?.value.trim();
+            if (searchQuery) {
+              window.location.href = `product.html?search=${encodeURIComponent(
+                searchQuery
+              )}`;
+            } else {
+              alert("⚠️ Mohon masukkan kata kunci pencarian");
+            }
+            return false;
+          });
+        // Newsletter
+        document
+          .getElementById("newsletterForm")
+          ?.addEventListener("submit", function (e) {
+            e.preventDefault();
+            const emailInput = this.querySelector('input[type="email"]');
+            if (emailInput && emailInput.value) {
+              alert("Terima kasih! Anda telah berlangganan newsletter kami.");
+              emailInput.value = "";
+            }
+          });
+      });
+    </script>
+  </body>
+</html>

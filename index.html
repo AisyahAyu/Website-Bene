@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="PT. Bene Interio Global - Penyedia furniture berkualitas tinggi untuk hunian, kantor, dan ruang komersial"
+    />
+    <meta
+      name="keywords"
+      content="furniture, interior, bene, meja, kursi, lemari, sofa"
+    />
+    <title>PT. Bene Interio Global - Furniture Berkualitas</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="image/favicon.png" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styleindex.css" />
+  </head>
+
+  <body>
+    <!-- ==================== NAVBAR ==================== -->
+    <!-- ==================== NAVBAR ==================== -->
+    <nav class="navbar">
+      <div class="container">
+        <a href="index.html" aria-label="Home">
+          <img
+            src="image/Untitled design - 2025-09-05T132032.516.png"
+            class="logo"
+            alt="Bene Logo"
+          />
+        </a>
+        <ul class="menu">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about.html">Tentang</a></li>
+          <li><a href="product.html">Produk</a></li>
+          <li><a href="portofolio.html">Portfolio</a></li>
+          <li><a href="contact.html">Kontak Kami</a></li>
+        </ul>
+        <form class="example" id="searchForm">
+          <input
+            type="text"
+            placeholder="Search.."
+            name="search"
+            id="searchInput"
+            aria-label="Search"
+          />
+          <button type="submit" aria-label="Submit search">
+            <i class="fa fa-search"></i>
+          </button>
+        </form>
+        <button class="tombol" id="burger" aria-label="Toggle menu">
+          &#9776;
+        </button>
+      </div>
+    </nav>
+
+    <!-- ==================== SLIDESHOW ==================== -->
+    <section class="slideshow-container">
+      <div class="mySlides fade">
+        <img src="image/Banner 1.png" alt="Banner 1 - Furniture Collection" />
+      </div>
+      <div class="mySlides fade">
+        <img src="image/Banner 2.png" alt="Banner 2 - Special Offers" />
+      </div>
+      <div class="mySlides fade">
+        <img src="image/Banner 3.png" alt="Banner 3 - New Arrivals" />
+      </div>
+
+      <a class="prev" onclick="plusSlides(-1)" aria-label="Previous slide"
+        >&#10094;</a
+      >
+      <a class="next" onclick="plusSlides(1)" aria-label="Next slide"
+        >&#10095;</a
+      >
+
+      <div class="dots-container">
+        <span
+          class="dot"
+          onclick="currentSlide(1)"
+          aria-label="Go to slide 1"
+        ></span>
+        <span
+          class="dot"
+          onclick="currentSlide(2)"
+          aria-label="Go to slide 2"
+        ></span>
+        <span
+          class="dot"
+          onclick="currentSlide(3)"
+          aria-label="Go to slide 3"
+        ></span>
+      </div>
+    </section>
+
+    <!-- ==================== FLAGSHIP PROJECTS SECTION ==================== -->
+    <section class="projects-section">
+      <div class="section-header">
+        <h2>Our Flagship Projects</h2>
+        <p>
+          See various furniture projects we have completed for clients from
+          various segments
+        </p>
+      </div>
+
+      <div class="projects-grid" id="flagshipProjectsGrid">
+        <div class="loading-placeholder">Loading projects...</div>
+      </div>
+    </section>
+
+    <!-- ==================== BEST PRODUCTS SECTION ==================== -->
+    <section class="best-products-section">
+      <div class="best-products-header">
+        <hr class="line-left" />
+        <h2>THE BEST PRODUCTS</h2>
+        <hr class="line-right" />
+      </div>
+
+      <div class="best-products-carousel">
+        <button
+          class="product-arrow left"
+          id="productPrev"
+          aria-label="Previous product"
+        >
+          &lt;
+        </button>
+
+        <div class="product-image" id="productImageContainer">
+          <img id="productImg" src="" alt="" />
+          <div class="product-name" id="productName"></div>
+          <div class="product-price" id="productPrice"></div>
+          <button class="product-detail-btn" id="productDetailBtn">
+            Lihat Detail <i class="fa fa-arrow-right"></i>
+          </button>
+        </div>
+
+        <button
+          class="product-arrow right"
+          id="productNext"
+          aria-label="Next product"
+        >
+          &gt;
+        </button>
+      </div>
+    </section>
+
+    <!-- ==================== FOR WHAT SECTION ==================== -->
+    <section class="for-what-section">
+      <h2 class="for-what-title">
+        <span>For What?</span>
+      </h2>
+
+      <div class="for-what-grid">
+        <a
+          href="product.html?room=bedroom"
+          class="for-what-card"
+          data-room="bedroom"
+        >
+          <img src="image/bedroom.jpg" alt="Bedroom Furniture" />
+          <div class="for-what-label bedroom">Bedroom</div>
+        </a>
+
+        <a
+          href="product.html?room=bathroom"
+          class="for-what-card"
+          data-room="bathroom"
+        >
+          <img src="image/bathroom.jpg" alt="Bathroom Furniture" />
+          <div class="for-what-label bathroom">Bathroom</div>
+        </a>
+
+        <a
+          href="product.html?room=livingroom"
+          class="for-what-card"
+          data-room="livingroom"
+        >
+          <img src="image/livingroom.jpg" alt="Living Room Furniture" />
+          <div class="for-what-label livingroom">Livingroom</div>
+        </a>
+
+        <a
+          href="product.html?room=classroom"
+          class="for-what-card"
+          data-room="classroom"
+        >
+          <img src="image/classroom.jpg" alt="Classroom Furniture" />
+          <div class="for-what-label classroom">Classroom</div>
+        </a>
+
+        <a
+          href="product.html?room=officeroom"
+          class="for-what-card"
+          data-room="officeroom"
+        >
+          <img src="image/officeroom.jpg" alt="Office Room Furniture" />
+          <div class="for-what-label officeroom">Officeroom</div>
+        </a>
+
+        <a
+          href="product.html?room=kitchenroom"
+          class="for-what-card"
+          data-room="kitchenroom"
+        >
+          <img src="image/kitchenroom.jpg" alt="Kitchen Room Furniture" />
+          <div class="for-what-label kitchenroom">Kitchenroom</div>
+        </a>
+      </div>
+    </section>
+
+    <!-- ==================== VIRTUAL TOUR SECTION ==================== -->
+    <section class="virtual-tour-section">
+      <h2 class="virtual-tour-title">Virtual Tour Experience</h2>
+      <p class="virtual-tour-desc">
+        Immerse yourself in our meticulously designed spaces. Experience the
+        quality, craftsmanship, and attention to detail that defines Bene
+        Interio Global through our interactive virtual tours.
+      </p>
+
+      <div class="virtual-tour-cards">
+        <div class="virtual-tour-card">
+          <img
+            src="image/livingroom-tour.png"
+            alt="Modern Living Room Virtual Tour"
+          />
+          <div class="virtual-tour-info">
+            <div class="virtual-tour-room">Modern Living Room</div>
+            <div class="virtual-tour-sub">
+              Experience our contemporary living room design with premium...
+            </div>
+            <a
+              href="virtual-tour-detail.html?tour=livingroom"
+              class="virtual-tour-btn"
+              >Start Virtual Tour</a
+            >
+          </div>
+        </div>
+
+        <div class="virtual-tour-card">
+          <img
+            src="image/livingroom-tour.png"
+            alt="Executive Office Virtual Tour"
+          />
+          <div class="virtual-tour-info">
+            <div class="virtual-tour-room">Executive Office</div>
+            <div class="virtual-tour-sub">
+              Explore our professional office space design with ergonomic...
+            </div>
+            <a
+              href="virtual-tour-detail.html?tour=executiveoffice"
+              class="virtual-tour-btn"
+              >Start Virtual Tour</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TRANSFORM SPACE SECTION ==================== -->
+    <section class="transform-space-section">
+      <div class="transform-space-container">
+        <div class="transform-space-left">
+          <div class="transform-space-top">
+            <button class="transform-badge">
+              <i class="fa fa-magic"></i> Ready to Transform Your Space?
+            </button>
+          </div>
+
+          <h2 class="transform-space-title">
+            Wujudkan Ruang Impian Anda Bersama Kami
+          </h2>
+
+          <p class="transform-space-desc">
+            Dapatkan solusi furniture terlengkap dengan kualitas premium, desain
+            modern, dan layanan profesional. Tim ahli kami siap membantu
+            mewujudkan ruang impian Anda.
+          </p>
+
+          <div class="transform-space-benefits">
+            <div class="benefit-row">
+              <span class="benefit">
+                <i class="fa fa-star"></i> Garansi Kualitas
+              </span>
+              <span class="benefit">
+                <i class="fa fa-star"></i> Desain Terbaik
+              </span>
+            </div>
+            <div class="benefit-row">
+              <span class="benefit">
+                <i class="fa fa-star"></i> Respon Cepat
+              </span>
+              <span class="benefit">
+                <i class="fa fa-star"></i> Kualitas Bagus
+              </span>
+            </div>
+          </div>
+
+          <a
+            href="https://wa.me/yourwa"
+            class="transform-space-btn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fa fa-phone"></i> Hubungi Sekarang
+          </a>
+        </div>
+
+        <div class="transform-space-right">
+          <div class="transform-space-img-wrap">
+            <img
+              src="image/ruang-impian.jpg"
+              alt="Ruang Impian"
+              class="transform-space-img"
+            />
+            <div class="transform-space-konsul">
+              <span>Ayo Konsultasi!</span>
+              <img src="image/konsultasi-globe.png" alt="Konsultasi" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== FOOTER SECTION ==================== -->
+    <footer class="bene-footer">
+      <div class="bene-footer-top">
+        <div class="bene-footer-col bene-footer-brand">
+          <img
+            src="image/Untitled design - 2025-09-05T132032.516.png"
+            alt="Bene Logo"
+            class="bene-footer-logo"
+          />
+          <p class="bene-footer-desc">
+            Penyedia furnitur berkualitas tinggi dengan konsep one-stop shopping
+            untuk kebutuhan hunian, kantor, dan ruang komersial.
+          </p>
+          <div class="bene-footer-social">
+            <span>Follow Us</span>
+            <a href="#"><i class="fa fa-instagram"></i></a>
+            <a href="#"><i class="fa fa-whatsapp"></i></a>
+            <a href="#"><i class="fa fa-envelope"></i></a>
+            <a href="#"><i class="fa fa-facebook"></i></a>
+          </div>
+        </div>
+        <div class="bene-footer-col bene-footer-links">
+          <h4>Quick links</h4>
+          <ul>
+            <li><a href="about.html">Tentang kami</a></li>
+            <li><a href="product.html">Produk</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="portofolio.html">Portofolio</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="bene-footer-col bene-footer-category">
+          <h4>Kategori Produk</h4>
+          <ul>
+            <li><a href="product.html?category=kursi">Kursi</a></li>
+            <li><a href="product.html?category=meja">Meja</a></li>
+            <li><a href="product.html?category=kasur-sofa">Sofa</a></li>
+            <li><a href="product.html?category=kasur-sofa">Tempat Tidur</a></li>
+          </ul>
+        </div>
+        <div class="bene-footer-col bene-footer-contact">
+          <h4>Hubungi kami</h4>
+          <ul>
+            <li>
+              <i class="fa fa-map-marker"></i>
+              <span>Alamat<br />Jakarta Pusat, DKI Jakarta, Indonesia</span>
+            </li>
+            <li>
+              <i class="fa fa-phone"></i>
+              <span>Telepon<br />+62 21 XXXX XXXX</span>
+            </li>
+            <li>
+              <i class="fa fa-envelope"></i>
+              <span>Email<br />info@beneinterio.com</span>
+            </li>
+            <li>
+              <i class="fa fa-clock-o"></i>
+              <span>Jam Operasional<br />Senin - Jumat: 08:00 – 17:00 WIB</span>
+            </li>
+          </ul>
+          <a href="https://wa.me/62218888888" class="bene-footer-btn"
+            ><i class="fa fa-phone"></i> Hubungi Sekarang</a
+          >
+        </div>
+      </div>
+      <div class="bene-footer-update">
+        <div class="bene-footer-update-left">
+          <strong>Dapatkan Update Terbaru</strong>
+          <div class="bene-footer-update-desc">
+            Berlangganan newsletter untuk mendapatkan informasi produk dan promo
+            terbaru
+          </div>
+        </div>
+        <form class="bene-footer-update-form" id="newsletterForm">
+          <input
+            type="email"
+            placeholder="Masukkan email"
+            aria-label="Email address"
+            required
+          />
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+      <div class="bene-footer-bottom">
+        © 2024 PT. Bene Interio Global. All rights reserved.
+      </div>
+    </footer>
+
+    <!-- ==================== JAVASCRIPT ==================== -->
+    <script>
+      // ==================== SLIDESHOW SCRIPT ====================
+      let slideIndex = 1;
+      showSlides(slideIndex);
+
+      // Auto slideshow every 5 seconds
+      setInterval(function () {
+        plusSlides(1);
+      }, 5000);
+
+      function plusSlides(n) {
+        showSlides((slideIndex += n));
+      }
+
+      function currentSlide(n) {
+        showSlides((slideIndex = n));
+      }
+
+      function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+
+        if (n > slides.length) {
+          slideIndex = 1;
+        }
+        if (n < 1) {
+          slideIndex = slides.length;
+        }
+
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+      }
+
+      // ==================== MOBILE MENU ====================
+      document.getElementById("burger")?.addEventListener("click", function () {
+        document.querySelector(".menu")?.classList.toggle("aktif");
+      });
+
+      // ==================== SEARCH HANDLER ====================
+      function handleSearch(event) {
+        event.preventDefault();
+        const searchInput = document.getElementById("searchInput");
+        const searchQuery = searchInput?.value.trim();
+
+        if (searchQuery) {
+          window.location.href = `product.html?search=${encodeURIComponent(
+            searchQuery
+          )}`;
+        } else {
+          alert("⚠️ Mohon masukkan kata kunci pencarian");
+        }
+        return false;
+      }
+
+      // Add search form submit handler
+      document
+        .getElementById("searchForm")
+        ?.addEventListener("submit", handleSearch);
+
+      // ==================== FLAGSHIP PROJECTS ====================
+      const fallbackProjects = [
+        {
+          id: "mexec-01",
+          city: "Jakarta",
+          year: 2025,
+          title: "Modern Executive Office",
+          duration: "6 minggu",
+          tags: ["Modern", "Executive", "Ergonomis"],
+          image: "image/project1.jpg",
+          desc: "Desain ruang kantor modern dengan furniture ergonomis dan konsep open space yang nyaman untuk produktivitas tim.",
+        },
+        {
+          id: "mexec-02",
+          city: "Jakarta",
+          year: 2025,
+          title: "Pavilion Workspace",
+          duration: "8 minggu",
+          tags: ["Kayu", "Terbuka", "Tropis"],
+          image: "image/project2.jpg",
+          desc: "Ruang kerja semi-outdoor dengan banyak bukaan untuk pencahayaan alami dan sirkulasi udara.",
+        },
+        {
+          id: "mexec-03",
+          city: "Jakarta",
+          year: 2025,
+          title: "Private Executive Suite",
+          duration: "5 minggu",
+          tags: ["Premium", "Hangat", "Executive"],
+          image: "image/project3.jpg",
+          desc: "Suite eksekutif dengan material premium dan tata ruang privat namun tetap fungsional.",
+        },
+        {
+          id: "mexec-04",
+          city: "Jakarta",
+          year: 2024,
+          title: "Collaborative Hub",
+          duration: "7 minggu",
+          tags: ["Kolaboratif", "Minimalis", "Modern"],
+          image: "image/project4.jpg",
+          desc: "Ruang kerja kolaboratif dengan area diskusi terpadu dan furniture modular yang dapat diatur sesuai kebutuhan tim.",
+        },
+        {
+          id: "mexec-05",
+          city: "Jakarta",
+          year: 2024,
+          title: "Elegant Office Space",
+          duration: "5 minggu",
+          tags: ["Elegan", "Modern", "Fungsional"],
+          image: "image/project5.jpg",
+          desc: "Ruang kerja elegan dengan sentuhan material berkualitas tinggi dan layout yang memaksimalkan produktivitas.",
+        },
+        {
+          id: "mexec-06",
+          city: "Bandung",
+          year: 2024,
+          title: "Creative Studio Office",
+          duration: "8 minggu",
+          tags: ["Kreatif", "Studio", "Nyaman"],
+          image: "image/project6.jpg",
+          desc: "Studio kreatif dengan area brainstorming dan ruang kerja yang menginspirasi inovasi dan kreativitas tim.",
+        },
+      ];
+
+      async function loadFlagshipProjects() {
+        try {
+          const response = await fetch("data/portfolio.json");
+          let allProjects = [];
+
+          if (!response.ok) {
+            console.warn("Using fallback data - portfolio.json not found");
+            allProjects = fallbackProjects;
+          } else {
+            const portfolioData = await response.json();
+            portfolioData.years.forEach((yearData) => {
+              yearData.items.forEach((item) => {
+                allProjects.push(item);
+              });
+            });
+          }
+
+          // Shuffle and get random 3 projects
+          const shuffled = allProjects.sort(() => 0.5 - Math.random());
+          const randomProjects = shuffled.slice(0, 3);
+
+          renderFlagshipProjects(randomProjects);
+        } catch (error) {
+          console.error("Error loading flagship projects:", error);
+          const shuffled = fallbackProjects.sort(() => 0.5 - Math.random());
+          const randomProjects = shuffled.slice(0, 3);
+          renderFlagshipProjects(randomProjects);
+        }
+      }
+
+      function renderFlagshipProjects(projects) {
+        const grid = document.getElementById("flagshipProjectsGrid");
+
+        if (!grid) return;
+
+        if (projects.length === 0) {
+          grid.innerHTML =
+            '<p class="loading-placeholder">No projects available.</p>';
+          return;
+        }
+
+        const projectsHTML = projects
+          .map((project) => {
+            const tagsHTML = (project.tags || [])
+              .slice(0, 2)
+              .map((tag) => `<span class="tag">${tag}</span>`)
+              .join("");
+
+            return `
+            <div class="project-container">
+              <div class="project-card">
+                <div class="project-image">
+                  <img 
+                    src="${project.image}" 
+                    alt="${project.title}" 
+                    loading="lazy" 
+                    onerror="this.src='image/placeholder.jpg'" 
+                  />
+                  <div class="location-year">
+                    <span class="location">
+                      <i class="fa fa-map-marker"></i> ${project.city}
+                    </span>
+                    <span class="year">
+                      <i class="fa fa-calendar"></i> ${project.year}
+                    </span>
+                  </div>
+                  <h2 class="project-title">${project.title}</h2>
+                </div>
+                <div class="project-content">
+                  <p class="project-description">${project.desc}</p>
+                  <div class="project-tags">${tagsHTML}</div>
+                  <div class="project-footer">
+                    <span class="duration">Durasi ${project.duration}</span>
+                    <a href="portofolio.html#${encodeURIComponent(
+                      project.id
+                    )}" class="detail-link">
+                      Lihat Detail
+                      <i class="fa fa-arrow-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          `;
+          })
+          .join("");
+
+        grid.innerHTML = projectsHTML;
+      }
+
+      // ==================== BEST PRODUCTS ====================
+      const bestProductsData = [
+        {
+          id: 1,
+          name: "Meja Kerja Minimalis",
+          price: "Rp 1.500.000,00",
+          image: "image/meja-kerja.png",
+        },
+        {
+          id: 2,
+          name: "Meja Belajar Anak",
+          price: "Rp 800.000,00",
+          image: "image/meja-belajar.png",
+        },
+        {
+          id: 3,
+          name: "Meja Komputer Gaming",
+          price: "Rp 2.500.000,00",
+          image: "image/meja-gamer.png",
+        },
+        {
+          id: 4,
+          name: "Meja Makan Keluarga",
+          price: "Rp 3.500.000,00",
+          image: "image/meja-makan.png",
+        },
+        {
+          id: 5,
+          name: "Kursi Kantor Ergonomis",
+          price: "Rp 500.000,00",
+          image: "image/kursi-kantor.png",
+        },
+        {
+          id: 6,
+          name: "Kursi Gaming Pro",
+          price: "Rp 2.800.000,00",
+          image: "image/kursi-gaming.png",
+        },
+        {
+          id: 7,
+          name: "Kursi Makan Kayu Jati",
+          price: "Rp 650.000,00",
+          image: "image/kursi-makan.png",
+        },
+        {
+          id: 8,
+          name: "Kursi Lipat Portable",
+          price: "Rp 250.000,00",
+          image: "image/kursi-lipat.png",
+        },
+        {
+          id: 9,
+          name: "Kursi Santai Goyang",
+          price: "Rp 1.200.000,00",
+          image: "image/kursi-goyang.png",
+        },
+        {
+          id: 10,
+          name: "Lemari Pakaian 2 Pintu",
+          price: "Rp 2.000.000,00",
+          image: "image/lemari-2pintu.png",
+        },
+        {
+          id: 11,
+          name: "Lemari Pakaian 3 Pintu",
+          price: "Rp 3.200.000,00",
+          image: "image/lemari-3pintu.png",
+        },
+        {
+          id: 12,
+          name: "Lemari Sliding Modern",
+          price: "Rp 4.500.000,00",
+          image: "image/lemari-sliding.png",
+        },
+        {
+          id: 14,
+          name: "Kasur Spring Bed Queen",
+          price: "Rp 900.000,00",
+          image: "image/13.png",
+        },
+        {
+          id: 15,
+          name: "Kasur Busa Premium",
+          price: "Rp 1.500.000,00",
+          image: "image/14.png",
+        },
+        {
+          id: 16,
+          name: "Sofa L Minimalis",
+          price: "Rp 1.800.000,00",
+          image: "image/18.png",
+        },
+        {
+          id: 17,
+          name: "Sofa Bed Multifungsi",
+          price: "Rp 2.500.000,00",
+          image: "image/17.png",
+        },
+        {
+          id: 18,
+          name: "Sofa 3 Dudukan Klasik",
+          price: "Rp 3.500.000,00",
+          image: "image/16.png",
+        },
+        {
+          id: 20,
+          name: "Rak Buku 5 Tingkat",
+          price: "Rp 700.000,00",
+          image: "image/19.png",
+        },
+        {
+          id: 21,
+          name: "Rak Sepatu 10 Pasang",
+          price: "Rp 350.000,00",
+          image: "image/20.png",
+        },
+        {
+          id: 22,
+          name: "Rak Sepatu Sliding",
+          price: "Rp 850.000,00",
+          image: "image/21.png",
+        },
+      ];
+
+      function shuffleArray(array) {
+        const newArray = [...array];
+        for (let i = newArray.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+        }
+        return newArray;
+      }
+
+      const randomProducts = shuffleArray(bestProductsData);
+      let currentProductIndex = 0;
+
+      function showBestProduct(index) {
+        const product = randomProducts[index];
+        const container = document.getElementById("productImageContainer");
+
+        if (!container) return;
+
+        container.style.opacity = "0";
+
+        setTimeout(() => {
+          const imgElement = document.getElementById("productImg");
+          const nameElement = document.getElementById("productName");
+          const priceElement = document.getElementById("productPrice");
+          const btnElement = document.getElementById("productDetailBtn");
+
+          if (imgElement) {
+            imgElement.src = product.image;
+            imgElement.alt = product.name;
+          }
+          if (nameElement) nameElement.textContent = product.name;
+          if (priceElement) priceElement.textContent = product.price;
+          if (btnElement)
+            btnElement.setAttribute("data-product-id", product.id);
+
+          container.style.opacity = "1";
+          container.classList.add("product-fade-in");
+        }, 200);
+      }
+
+      // Navigation buttons
+      document
+        .getElementById("productPrev")
+        ?.addEventListener("click", function () {
+          currentProductIndex =
+            (currentProductIndex - 1 + randomProducts.length) %
+            randomProducts.length;
+          showBestProduct(currentProductIndex);
+        });
+
+      document
+        .getElementById("productNext")
+        ?.addEventListener("click", function () {
+          currentProductIndex =
+            (currentProductIndex + 1) % randomProducts.length;
+          showBestProduct(currentProductIndex);
+        });
+
+      // Detail button click
+      document
+        .getElementById("productDetailBtn")
+        ?.addEventListener("click", function () {
+          const productId = this.getAttribute("data-product-id");
+          if (productId) {
+            window.location.href = `product-detail.html?id=${productId}`;
+          }
+        });
+
+      // Image click to detail
+      document
+        .getElementById("productImg")
+        ?.addEventListener("click", function () {
+          const btn = document.getElementById("productDetailBtn");
+          const productId = btn?.getAttribute("data-product-id");
+          if (productId) {
+            window.location.href = `product-detail.html?id=${productId}`;
+          }
+        });
+
+      // Auto slide every 5 seconds
+      setInterval(function () {
+        currentProductIndex = (currentProductIndex + 1) % randomProducts.length;
+        showBestProduct(currentProductIndex);
+      }, 5000);
+
+      // ==================== NEWSLETTER HANDLER ====================
+      document
+        .getElementById("newsletterForm")
+        ?.addEventListener("submit", function (e) {
+          e.preventDefault();
+          const emailInput = this.querySelector('input[type="email"]');
+          if (emailInput && emailInput.value) {
+            alert("Terima kasih! Anda telah berlangganan newsletter kami.");
+            emailInput.value = "";
+          }
+        });
+
+      // ==================== INITIALIZE ALL ====================
+      document.addEventListener("DOMContentLoaded", function () {
+        loadFlagshipProjects();
+        showBestProduct(currentProductIndex);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Detail produk furniture berkualitas dari PT. Bene Interio Global"
+    />
+    <title>Detail Produk | PT. Bene Interio Global</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="image/favicon.png" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styleproduct.css" />
+    <link rel="stylesheet" href="css/product-detail.css" />
+  </head>
+
+  <body>
+    <!-- ==================== NAVBAR ==================== -->
+    <nav class="navbar">
+      <div class="container">
+        <a href="index.html" aria-label="Home">
+          <img
+            src="image/Untitled design - 2025-09-05T132032.516.png"
+            class="logo"
+            alt="Bene Logo"
+          />
+        </a>
+
+        <ul class="menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">Tentang</a></li>
+          <li><a href="product.html" class="active">Produk</a></li>
+          <li><a href="portofolio.html">Portfolio</a></li>
+          <li><a href="contact.html">Kontak Kami</a></li>
+        </ul>
+
+        <form class="example" id="navbarSearchForm">
+          <input
+            type="text"
+            placeholder="Search.."
+            name="search"
+            id="navbarSearchInput"
+            aria-label="Search"
+          />
+          <button type="submit" aria-label="Submit search">
+            <i class="fa fa-search"></i>
+          </button>
+        </form>
+
+        <button class="tombol" id="burger" aria-label="Toggle menu">
+          &#9776;
+        </button>
+      </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb-container">
+      <div class="container">
+        <div class="breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="separator">/</span>
+          <a href="product.html">Products</a>
+          <span class="separator">/</span>
+          <span class="current" id="breadcrumbProductName">Detail Produk</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product Detail Section -->
+    <div class="product-detail-main">
+      <div class="container">
+        <div class="product-detail-layout">
+          <!-- Product Images -->
+          <div class="product-images-section">
+            <div class="main-image-container">
+              <img
+                src=""
+                alt="Product Image"
+                id="mainProductImage"
+                class="main-product-image"
+              />
+              <div class="image-zoom-hint">
+                <i class="fas fa-search-plus"></i> Klik untuk zoom
+              </div>
+            </div>
+            <div class="thumbnail-images" id="thumbnailImages">
+              <!-- Thumbnails will be generated dynamically -->
+            </div>
+          </div>
+
+          <!-- Product Info -->
+          <div class="product-info-section">
+            <div class="product-badge" id="productBadge">NEW</div>
+            <h1 class="product-detail-title" id="productTitle">Nama Produk</h1>
+            <div class="product-rating">
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+              <span class="rating-text">(4.5/5 - 128 ulasan)</span>
+            </div>
+
+            <div class="product-price-section">
+              <div class="price-main" id="productPrice">Rp 1.500.000,00</div>
+              <div class="price-original" id="productPriceOriginal">
+                Rp 2.000.000,00
+              </div>
+              <div class="price-discount">Hemat 25%</div>
+            </div>
+
+            <div class="product-description" id="productDescription">
+              <h3>Deskripsi Produk</h3>
+              <p>
+                Deskripsi lengkap produk akan ditampilkan di sini dengan detail
+                spesifikasi dan keunggulan produk.
+              </p>
+            </div>
+
+            <div class="product-specifications" id="productSpecs">
+              <h3>Spesifikasi</h3>
+              <ul>
+                <li><strong>Material:</strong> <span>Kayu Jati</span></li>
+                <li><strong>Dimensi:</strong> <span>120 x 60 x 75 cm</span></li>
+                <li><strong>Berat:</strong> <span>25 kg</span></li>
+                <li><strong>Warna:</strong> <span>Natural Wood</span></li>
+                <li><strong>Garansi:</strong> <span>2 Tahun</span></li>
+              </ul>
+            </div>
+
+            <div class="product-actions">
+              <div class="quantity-selector">
+                <button class="qty-btn" id="decreaseQty">-</button>
+                <input
+                  type="number"
+                  value="1"
+                  min="1"
+                  max="10"
+                  id="quantityInput"
+                  readonly
+                />
+                <button class="qty-btn" id="increaseQty">+</button>
+              </div>
+
+              <div class="action-buttons">
+                <button class="btn-add-cart" id="addToCartBtn">
+                  <i class="fas fa-shopping-cart"></i> Tambah ke Keranjang
+                </button>
+                <button class="btn-buy-now" id="buyNowBtn">
+                  <i class="fas fa-bolt"></i> Beli Sekarang
+                </button>
+              </div>
+
+              <div class="additional-actions">
+                <button class="btn-wishlist" id="wishlistBtn">
+                  <i class="far fa-heart"></i> Tambah ke Wishlist
+                </button>
+                <button class="btn-share" id="shareBtn">
+                  <i class="fas fa-share-alt"></i> Bagikan
+                </button>
+              </div>
+            </div>
+
+            <div class="product-features">
+              <div class="feature-item">
+                <i class="fas fa-truck"></i>
+                <div>
+                  <strong>Gratis Ongkir</strong>
+                  <p>Untuk pembelian minimal Rp 1.000.000</p>
+                </div>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-shield-alt"></i>
+                <div>
+                  <strong>Garansi Resmi</strong>
+                  <p>Produk bergaransi 2 tahun</p>
+                </div>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-undo"></i>
+                <div>
+                  <strong>Retur Mudah</strong>
+                  <p>7 hari pengembalian gratis</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tabs Section -->
+        <div class="product-tabs-section">
+          <div class="tabs-header">
+            <button class="tab-btn active" data-tab="description">
+              Deskripsi Lengkap
+            </button>
+            <button class="tab-btn" data-tab="specifications">
+              Spesifikasi Detail
+            </button>
+            <button class="tab-btn" data-tab="reviews">Ulasan (128)</button>
+          </div>
+
+          <div class="tabs-content">
+            <div class="tab-panel active" id="description">
+              <h3>Deskripsi Lengkap Produk</h3>
+              <p id="fullDescription">
+                Produk furniture berkualitas tinggi dengan desain modern dan
+                elegan. Dibuat dari material pilihan dengan proses produksi yang
+                teliti untuk menghasilkan produk terbaik.
+              </p>
+              <h4>Keunggulan Produk:</h4>
+              <ul>
+                <li>Desain modern dan minimalis</li>
+                <li>Material berkualitas tinggi</li>
+                <li>Mudah dirawat dan tahan lama</li>
+                <li>Ergonomis dan nyaman digunakan</li>
+                <li>Ramah lingkungan</li>
+              </ul>
+            </div>
+
+            <div class="tab-panel" id="specifications">
+              <h3>Spesifikasi Detail</h3>
+              <table class="specs-table">
+                <tr>
+                  <td><strong>Material</strong></td>
+                  <td>Kayu Jati Premium</td>
+                </tr>
+                <tr>
+                  <td><strong>Dimensi (P x L x T)</strong></td>
+                  <td>120 cm x 60 cm x 75 cm</td>
+                </tr>
+                <tr>
+                  <td><strong>Berat</strong></td>
+                  <td>25 kg</td>
+                </tr>
+                <tr>
+                  <td><strong>Warna</strong></td>
+                  <td>Natural Wood, Dark Brown, White</td>
+                </tr>
+                <tr>
+                  <td><strong>Finishing</strong></td>
+                  <td>Melamine & Duco</td>
+                </tr>
+                <tr>
+                  <td><strong>Garansi</strong></td>
+                  <td>2 Tahun</td>
+                </tr>
+                <tr>
+                  <td><strong>Negara Asal</strong></td>
+                  <td>Indonesia</td>
+                </tr>
+              </table>
+            </div>
+
+            <div class="tab-panel" id="reviews">
+              <h3>Ulasan Pelanggan</h3>
+              <div class="reviews-summary">
+                <div class="rating-overview">
+                  <div class="rating-score">4.5</div>
+                  <div class="rating-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                  </div>
+                  <p>128 ulasan</p>
+                </div>
+                <div class="rating-bars">
+                  <div class="rating-bar-item">
+                    <span>5 ★</span>
+                    <div class="bar">
+                      <div class="fill" style="width: 75%"></div>
+                    </div>
+                    <span>96</span>
+                  </div>
+                  <div class="rating-bar-item">
+                    <span>4 ★</span>
+                    <div class="bar">
+                      <div class="fill" style="width: 15%"></div>
+                    </div>
+                    <span>19</span>
+                  </div>
+                  <div class="rating-bar-item">
+                    <span>3 ★</span>
+                    <div class="bar">
+                      <div class="fill" style="width: 6%"></div>
+                    </div>
+                    <span>8</span>
+                  </div>
+                  <div class="rating-bar-item">
+                    <span>2 ★</span>
+                    <div class="bar">
+                      <div class="fill" style="width: 3%"></div>
+                    </div>
+                    <span>4</span>
+                  </div>
+                  <div class="rating-bar-item">
+                    <span>1 ★</span>
+                    <div class="bar">
+                      <div class="fill" style="width: 1%"></div>
+                    </div>
+                    <span>1</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="reviews-list">
+                <div class="review-item">
+                  <div class="review-header">
+                    <div class="reviewer-info">
+                      <div class="reviewer-avatar">JD</div>
+                      <div>
+                        <strong>John Doe</strong>
+                        <div class="review-stars">
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                        </div>
+                      </div>
+                    </div>
+                    <span class="review-date">2 hari yang lalu</span>
+                  </div>
+                  <p class="review-text">
+                    Produk sangat bagus! Kualitas material premium dan
+                    pengiriman cepat. Sangat puas dengan pembelian ini.
+                  </p>
+                </div>
+
+                <div class="review-item">
+                  <div class="review-header">
+                    <div class="reviewer-info">
+                      <div class="reviewer-avatar">AS</div>
+                      <div>
+                        <strong>Anna Smith</strong>
+                        <div class="review-stars">
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="far fa-star"></i>
+                        </div>
+                      </div>
+                    </div>
+                    <span class="review-date">1 minggu yang lalu</span>
+                  </div>
+                  <p class="review-text">
+                    Desainnya bagus dan sesuai dengan gambar. Hanya saja
+                    pengiriman agak lama. Overall recommended!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Related Products -->
+        <div class="related-products-section">
+          <h2 class="section-title">Produk Terkait</h2>
+          <div class="related-products-grid" id="relatedProductsGrid">
+            <!-- Related products will be loaded dynamically -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Image Modal -->
+    <div class="image-modal" id="imageModal">
+      <span class="modal-close">&times;</span>
+      <img class="modal-content" id="modalImage" />
+      <div class="modal-caption" id="modalCaption"></div>
+    </div>
+
+    <!-- ==================== FOOTER (SIMPLE VERSION) ==================== -->
+    <footer class="bene-footer">
+      <div class="bene-footer-top">
+        <div class="bene-footer-col bene-footer-brand">
+          <img
+            src="image/Untitled design - 2025-09-05T132032.516.png"
+            alt="Bene Logo"
+            class="bene-footer-logo"
+          />
+          <p class="bene-footer-desc">
+            Penyedia furnitur berkualitas tinggi dengan konsep one-stop shopping
+            untuk kebutuhan hunian, kantor, dan ruang komersial.
+          </p>
+          <div class="bene-footer-social">
+            <span>Follow Us</span>
+            <a href="#"><i class="fa fa-instagram"></i></a>
+            <a href="#"><i class="fa fa-whatsapp"></i></a>
+            <a href="#"><i class="fa fa-envelope"></i></a>
+            <a href="#"><i class="fa fa-facebook"></i></a>
+          </div>
+        </div>
+        <div class="bene-footer-col bene-footer-links">
+          <h4>Quick links</h4>
+          <ul>
+            <li><a href="about.html">Tentang kami</a></li>
+            <li><a href="product.html">Produk</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="portofolio.html">Portofolio</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="bene-footer-col bene-footer-category">
+          <h4>Kategori Produk</h4>
+          <ul>
+            <li><a href="product.html?category=kursi">Kursi</a></li>
+            <li><a href="product.html?category=meja">Meja</a></li>
+            <li><a href="product.html?category=kasur-sofa">Sofa</a></li>
+            <li><a href="product.html?category=kasur-sofa">Tempat Tidur</a></li>
+          </ul>
+        </div>
+        <div class="bene-footer-col bene-footer-contact">
+          <h4>Hubungi kami</h4>
+          <ul>
+            <li>
+              <i class="fa fa-map-marker"></i>
+              <span>Alamat<br />Jakarta Pusat, DKI Jakarta, Indonesia</span>
+            </li>
+            <li>
+              <i class="fa fa-phone"></i>
+              <span>Telepon<br />+62 21 XXXX XXXX</span>
+            </li>
+            <li>
+              <i class="fa fa-envelope"></i>
+              <span>Email<br />info@beneinterio.com</span>
+            </li>
+            <li>
+              <i class="fa fa-clock-o"></i>
+              <span>Jam Operasional<br />Senin - Jumat: 08:00 – 17:00 WIB</span>
+            </li>
+          </ul>
+          <a href="https://wa.me/62218888888" class="bene-footer-btn"
+            ><i class="fa fa-phone"></i> Hubungi Sekarang</a
+          >
+        </div>
+      </div>
+      <div class="bene-footer-update">
+        <div class="bene-footer-update-left">
+          <strong>Dapatkan Update Terbaru</strong>
+          <div class="bene-footer-update-desc">
+            Berlangganan newsletter untuk mendapatkan informasi produk dan promo
+            terbaru
+          </div>
+        </div>
+        <form class="bene-footer-update-form" id="footerNewsletterForm">
+          <input
+            type="email"
+            placeholder="Masukkan email"
+            id="footerNewsletterEmail"
+            required
+          />
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+      <div class="bene-footer-bottom">
+        © 2024 PT. Bene Interio Global. All rights reserved.
+      </div>
+    </footer>
+
+    <!-- ==================== JAVASCRIPT ==================== -->
+    <script>
+      // Handle search
+      function handleSearch(event) {
+        event.preventDefault();
+        const searchInput = document.getElementById("navbarSearchInput");
+        const searchQuery = searchInput?.value.trim();
+
+        if (searchQuery) {
+          window.location.href = `product.html?search=${encodeURIComponent(
+            searchQuery
+          )}`;
+        } else {
+          alert("⚠️ Mohon masukkan kata kunci pencarian");
+        }
+        return false;
+      }
+
+      document
+        .getElementById("navbarSearchForm")
+        ?.addEventListener("submit", handleSearch);
+
+      // Mobile menu toggle
+      document.getElementById("burger")?.addEventListener("click", function () {
+        document.querySelector(".menu")?.classList.toggle("aktif");
+      });
+
+      // Close menu when clicking outside
+      document.addEventListener("click", function (e) {
+        const menu = document.querySelector(".menu");
+        const burger = document.getElementById("burger");
+
+        if (window.innerWidth <= 768 && menu?.classList.contains("aktif")) {
+          if (!menu.contains(e.target) && !burger.contains(e.target)) {
+            menu.classList.remove("aktif");
+          }
+        }
+      });
+
+      // Newsletter subscription
+      document
+        .getElementById("footerNewsletterForm")
+        ?.addEventListener("submit", function (e) {
+          e.preventDefault();
+          const email = document.getElementById("footerNewsletterEmail").value;
+
+          if (email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+            alert(
+              "✅ Terima kasih telah berlangganan newsletter kami!\n\nEmail: " +
+                email
+            );
+            document.getElementById("footerNewsletterEmail").value = "";
+          } else {
+            alert("⚠️ Mohon masukkan alamat email yang valid.");
+          }
+        });
+    </script>
+    <script src="js/product-detail.js"></script>
+  </body>
+</html>

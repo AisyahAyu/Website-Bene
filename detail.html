@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Detail proyek interior modern dan fungsional oleh béne."
+    />
+    <title>Detail Proyek | PT. Bene Interio Global</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="image/favicon.png" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styledetail.css" />
+  </head>
+
+  <body>
+    <!-- ==================== NAVBAR ==================== -->
+    <nav class="navbar">
+      <div class="container">
+        <a href="index.html" aria-label="Home">
+          <img
+            src="image/Untitled design - 2025-09-05T132032.516.png"
+            class="logo"
+            alt="Bene Logo"
+          />
+        </a>
+        <ul class="menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">Tentang</a></li>
+          <li><a href="product.html">Produk</a></li>
+          <li><a href="portofolio.html" class="active">Portfolio</a></li>
+          <li><a href="contact.html">Kontak Kami</a></li>
+        </ul>
+        <form
+          class="example"
+          id="searchForm"
+          onsubmit="return handleSearch(event)"
+        >
+          <input
+            type="text"
+            placeholder="Search.."
+            name="search"
+            id="searchInput"
+          />
+          <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+        <button class="tombol" id="burger">&#9776;</button>
+      </div>
+    </nav>
+
+    <!-- Loading State -->
+    <div id="loading" class="loading">
+      <div class="spinner"></div>
+      <p>Memuat detail proyek...</p>
+    </div>
+
+    <!-- Error State -->
+    <div id="error" class="error-state" style="display: none">
+      <i class="fas fa-exclamation-triangle"></i>
+      <h2>Proyek Tidak Ditemukan</h2>
+      <p>Maaf, proyek yang Anda cari tidak ditemukan.</p>
+      <a href="portofolio.html" class="btn-back">
+        <i class="fas fa-arrow-left"></i> Kembali ke Portfolio
+      </a>
+    </div>
+
+    <!-- Content -->
+    <div id="content" style="display: none">
+      <!-- Hero Section -->
+      <section class="hero-detail">
+        <div class="hero-overlay">
+          <div class="container">
+            <div class="hero-content">
+              <h1 id="project-title" class="hero-title"></h1>
+              <div class="hero-breadcrumb">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <a href="portofolio.html">Portfolio</a>
+                <span>/</span>
+                <span id="breadcrumb-title">Detail</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <img id="hero-image" src="" alt="" class="hero-bg" />
+      </section>
+
+      <!-- Main Content -->
+      <main class="detail-main">
+        <div class="container">
+          <!-- Quick Navigation -->
+          <div class="quick-nav">
+            <a href="portofolio.html" class="btn-back-nav">
+              <i class="fas fa-arrow-left"></i> Kembali ke Portfolio
+            </a>
+            <div class="share-buttons">
+              <span class="share-label">Share:</span>
+              <button class="share-btn" data-platform="facebook">
+                <i class="fab fa-facebook-f"></i>
+              </button>
+              <button class="share-btn" data-platform="twitter">
+                <i class="fab fa-twitter"></i>
+              </button>
+              <button class="share-btn" data-platform="linkedin">
+                <i class="fab fa-linkedin-in"></i>
+              </button>
+              <button class="share-btn" data-platform="whatsapp">
+                <i class="fab fa-whatsapp"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Meta Info -->
+          <div class="meta-info">
+            <div class="meta-item">
+              <div class="meta-icon">
+                <i class="fas fa-calendar-alt"></i>
+              </div>
+              <div class="meta-text">
+                <span class="meta-label">Tanggal</span>
+                <span id="project-date" class="meta-value"></span>
+              </div>
+            </div>
+            <div class="meta-item">
+              <div class="meta-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="meta-text">
+                <span class="meta-label">Lokasi</span>
+                <span id="project-location" class="meta-value"></span>
+              </div>
+            </div>
+            <div class="meta-item">
+              <div class="meta-icon">
+                <i class="fas fa-clock"></i>
+              </div>
+              <div class="meta-text">
+                <span class="meta-label">Durasi</span>
+                <span id="project-duration" class="meta-value"></span>
+              </div>
+            </div>
+            <div class="meta-item">
+              <div class="meta-icon">
+                <i class="fas fa-tag"></i>
+              </div>
+              <div class="meta-text">
+                <span class="meta-label">Kategori</span>
+                <span id="project-category" class="meta-value"></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tags -->
+          <div class="tags-section">
+            <div id="project-tags" class="tags"></div>
+          </div>
+
+          <!-- Content Layout -->
+          <div class="content-layout">
+            <!-- Left Content -->
+            <div class="left-content">
+              <!-- Main Description Card -->
+              <div class="content-card">
+                <div class="card-header">
+                  <i class="fas fa-file-alt"></i>
+                  <h2 id="desc-title">Deskripsi Proyek</h2>
+                </div>
+                <div id="project-description" class="card-body"></div>
+              </div>
+
+              <!-- Features Card -->
+              <div class="content-card">
+                <div class="card-header">
+                  <i class="fas fa-check-circle"></i>
+                  <h2>Fitur & Keunggulan</h2>
+                </div>
+                <div class="card-body">
+                  <p id="features-intro" class="features-intro"></p>
+                  <ul id="features-list" class="features-list"></ul>
+                </div>
+              </div>
+
+              <!-- Highlights Card -->
+              <div class="content-card">
+                <div class="card-header">
+                  <i class="fas fa-star"></i>
+                  <h2>Highlights Proyek</h2>
+                </div>
+                <div class="card-body">
+                  <ul id="highlights-list" class="highlights-list"></ul>
+                </div>
+              </div>
+
+              <!-- Additional Info Card -->
+              <div
+                class="content-card"
+                id="additional-card"
+                style="display: none"
+              >
+                <div class="card-header">
+                  <i class="fas fa-info-circle"></i>
+                  <h2>Informasi Tambahan</h2>
+                </div>
+                <div class="card-body">
+                  <ul id="additional-list" class="additional-list"></ul>
+                </div>
+              </div>
+
+              <!-- Closing Statement Card -->
+              <div class="content-card closing-card">
+                <div class="card-body">
+                  <div class="closing-icon">
+                    <i class="fas fa-quote-left"></i>
+                  </div>
+                  <p id="closing-text" class="closing-text"></p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Sidebar -->
+            <div class="right-sidebar">
+              <!-- Image Gallery -->
+              <div class="sidebar-card gallery-card">
+                <div class="card-header">
+                  <i class="fas fa-images"></i>
+                  <h3>Galeri Proyek</h3>
+                </div>
+                <div id="image-gallery" class="image-gallery"></div>
+              </div>
+
+              <!-- Project Info Card -->
+              <div class="sidebar-card info-card">
+                <div class="card-header">
+                  <i class="fas fa-info-circle"></i>
+                  <h3>Informasi Proyek</h3>
+                </div>
+                <div class="info-grid">
+                  <div class="info-row">
+                    <i class="fas fa-calendar-alt"></i>
+                    <div>
+                      <label>Tanggal Proyek</label>
+                      <span id="info-date"></span>
+                    </div>
+                  </div>
+                  <div class="info-row">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                      <label>Lokasi</label>
+                      <span id="info-city"></span>
+                    </div>
+                  </div>
+                  <div class="info-row">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                      <label>Durasi Pengerjaan</label>
+                      <span id="info-duration"></span>
+                    </div>
+                  </div>
+                  <div class="info-row">
+                    <i class="fas fa-calendar-check"></i>
+                    <div>
+                      <label>Tahun</label>
+                      <span id="info-year"></span>
+                    </div>
+                  </div>
+                  <div class="info-row">
+                    <i class="fas fa-tag"></i>
+                    <div>
+                      <label>Kategori</label>
+                      <span id="info-category"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- CTA Card -->
+              <div class="sidebar-card cta-card">
+                <div class="cta-icon">
+                  <i class="fas fa-comments"></i>
+                </div>
+                <h3>Tertarik dengan Proyek Ini?</h3>
+                <p>
+                  Hubungi kami untuk konsultasi gratis dan dapatkan solusi
+                  interior terbaik untuk ruang Anda.
+                </p>
+                <a href="contact.html" class="btn-cta">
+                  <i class="fas fa-envelope"></i> Hubungi Kami
+                </a>
+                <a href="product.html" class="btn-secondary">
+                  <i class="fas fa-shopping-bag"></i> Lihat Produk
+                </a>
+                <div class="cta-contact">
+                  <p class="cta-phone">
+                    <i class="fas fa-phone"></i> +62 21 XXXX XXXX
+                  </p>
+                  <p class="cta-email">
+                    <i class="fas fa-envelope"></i> info@beneinterio.com
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Related Projects Section -->
+          <div class="related-section">
+            <div class="section-header">
+              <div>
+                <h2 class="section-title">
+                  <i class="fas fa-th-large"></i> Proyek Serupa
+                </h2>
+                <p class="section-subtitle">
+                  Lihat proyek-proyek lainnya yang mungkin Anda minati
+                </p>
+              </div>
+              <a href="portofolio.html" class="btn-view-all">
+                Lihat Semua <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+            <div id="related-projects" class="related-grid">
+              <!-- Will be populated by JS -->
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- ==================== FOOTER (SIMPLE VERSION) ==================== -->
+    <footer class="bene-footer">
+      <!-- Footer Top -->
+      <div class="bene-footer-top">
+        <!-- Brand Column -->
+        <div class="bene-footer-col bene-footer-brand">
+          <img
+            src="image/Untitled design - 2025-09-05T132032.516.png"
+            alt="Bene Logo"
+            class="bene-footer-logo"
+          />
+          <p class="bene-footer-desc">
+            Penyedia furnitur berkualitas tinggi dengan konsep one-stop shopping
+            untuk kebutuhan hunian, kantor, dan ruang komersial.
+          </p>
+          <div class="bene-footer-social">
+            <span>Follow Us</span>
+            <a
+              href="#"
+              aria-label="Instagram"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a
+              href="#"
+              aria-label="WhatsApp"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+            <a
+              href="#"
+              aria-label="Email"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fa fa-envelope"></i>
+            </a>
+            <a
+              href="#"
+              aria-label="Facebook"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fa-brands fa-facebook"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links Column -->
+        <div class="bene-footer-col bene-footer-links">
+          <h4>Quick links</h4>
+          <ul>
+            <li><a href="about.html">Tentang kami</a></li>
+            <li><a href="product.html">Produk</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="portofolio.html">Portofolio</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+
+        <!-- Category Column -->
+        <div class="bene-footer-col bene-footer-category">
+          <h4>Kategori Produk</h4>
+          <ul>
+            <li><a href="product.html?category=kursi">Kursi</a></li>
+            <li><a href="product.html?category=meja">Meja</a></li>
+            <li><a href="product.html?category=kasur-sofa">Sofa</a></li>
+            <li><a href="product.html?category=kasur-sofa">Tempat Tidur</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Column -->
+        <div class="bene-footer-col bene-footer-contact">
+          <h4>Hubungi kami</h4>
+          <ul>
+            <li>
+              <i class="fa fa-map-marker"></i>
+              <span>Alamat<br />Jakarta Pusat, DKI Jakarta, Indonesia</span>
+            </li>
+            <li>
+              <i class="fa fa-phone"></i>
+              <span>Telepon<br />+62 21 XXXX XXXX</span>
+            </li>
+            <li>
+              <i class="fa fa-envelope"></i>
+              <span>Email<br />info@beneinterio.com</span>
+            </li>
+            <li>
+              <i class="fa fa-clock-o"></i>
+              <span>Jam Operasional<br />Senin - Jumat: 08:00 – 17:00 WIB</span>
+            </li>
+          </ul>
+          <a
+            href="https://wa.me/62218888888"
+            class="bene-footer-btn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fa fa-phone"></i> Hubungi Sekarang
+          </a>
+        </div>
+      </div>
+
+      <!-- Newsletter Update -->
+      <div class="bene-footer-update">
+        <div class="bene-footer-update-left">
+          <strong>Dapatkan Update Terbaru</strong>
+          <div class="bene-footer-update-desc">
+            Berlangganan newsletter untuk mendapatkan informasi produk dan promo
+            terbaru
+          </div>
+        </div>
+        <form class="bene-footer-update-form" id="footerNewsletterForm">
+          <input
+            type="email"
+            placeholder="Masukkan email"
+            id="footerNewsletterEmail"
+            aria-label="Email address"
+            required
+          />
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="bene-footer-bottom">
+        © 2024 PT. Bene Interio Global. All rights reserved.
+      </div>
+    </footer>
+
+    <!-- ==================== JAVASCRIPT ==================== -->
+    <script>
+      // Handle search
+      function handleSearch(event) {
+        event.preventDefault();
+        const searchInput = document.getElementById("searchInput");
+        const searchQuery = searchInput?.value.trim();
+
+        if (searchQuery) {
+          window.location.href = `product.html?search=${encodeURIComponent(
+            searchQuery
+          )}`;
+        } else {
+          alert("⚠️ Mohon masukkan kata kunci pencarian");
+        }
+        return false;
+      }
+
+      document
+        .getElementById("searchForm")
+        ?.addEventListener("submit", handleSearch);
+
+      // Mobile menu toggle
+      document.getElementById("burger")?.addEventListener("click", function () {
+        document.querySelector(".menu")?.classList.toggle("aktif");
+      });
+
+      // Close menu when clicking outside
+      document.addEventListener("click", function (e) {
+        const menu = document.querySelector(".menu");
+        const burger = document.getElementById("burger");
+
+        if (window.innerWidth <= 768 && menu?.classList.contains("aktif")) {
+          if (!menu.contains(e.target) && !burger.contains(e.target)) {
+            menu.classList.remove("aktif");
+          }
+        }
+      });
+
+      // Newsletter subscription
+      document
+        .getElementById("footerNewsletterForm")
+        ?.addEventListener("submit", function (e) {
+          e.preventDefault();
+          const email = document.getElementById("newsletterEmail").value;
+
+          if (email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+            alert(
+              "✅ Terima kasih telah berlangganan newsletter kami!\n\nEmail: " +
+                email
+            );
+            document.getElementById("newsletterEmail").value = "";
+          } else {
+            alert("⚠️ Mohon masukkan alamat email yang valid.");
+          }
+        });
+    </script>
+    <script src="js/detail.js"></script>
+  </body>
+</html>
