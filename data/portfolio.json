@@ -1,0 +1,134 @@
+{
+  "years": [
+    {
+      "year": 2025,
+      "items": [
+        {
+          "id": "mexec-01",
+          "city": "Jakarta",
+          "year": 2025,
+          "title": "Modern Executive Office",
+          "duration": "6 minggu",
+          "tags": ["Modern", "Executive", "Ergonomis"],
+          "image": "image/project1.jpg",
+          "desc": "Desain ruang kantor modern dengan furniture ergonomis dan konsep open space yang nyaman untuk produktivitas tim."
+        },
+        {
+          "id": "mexec-02",
+          "city": "Jakarta",
+          "year": 2025,
+          "title": "Pavilion Workspace",
+          "duration": "8 minggu",
+          "tags": ["Kayu", "Terbuka", "Tropis"],
+          "image": "image/project2.jpg",
+          "desc": "Ruang kerja semi-outdoor dengan banyak bukaan untuk pencahayaan alami dan sirkulasi udara."
+        },
+        {
+          "id": "mexec-03",
+          "city": "Jakarta",
+          "year": 2025,
+          "title": "Private Executive Suite",
+          "duration": "5 minggu",
+          "tags": ["Premium", "Hangat", "Executive"],
+          "image": "image/project3.jpg",
+          "desc": "Suite eksekutif dengan material premium dan tata ruang privat namun tetap fungsional."
+        }
+      ]
+    },
+    {
+      "year": 2024,
+      "items": [
+        {
+          "id": "mexec-04",
+          "city": "Jakarta",
+          "year": 2024,
+          "title": "Modern Executive Office",
+          "duration": "6 minggu",
+          "tags": ["Modern", "Executive", "Ergonomis"],
+          "image": "image/project4.jpg",
+          "desc": "Desain ruang kantor modern dengan furniture ergonomis dan konsep open space yang nyaman untuk produktivitas tim."
+        },
+        {
+          "id": "mexec-05",
+          "city": "Jakarta",
+          "year": 2024,
+          "title": "Collaborative Hub",
+          "duration": "7 minggu",
+          "tags": ["Kolaboratif", "Minimalis", "Modern"],
+          "image": "image/project5.jpg",
+          "desc": "Ruang kerja kolaboratif dengan area diskusi terpadu dan furniture modular yang dapat diatur sesuai kebutuhan tim."
+        },
+        {
+          "id": "mexec-06",
+          "city": "Jakarta",
+          "year": 2024,
+          "title": "Elegant Office Space",
+          "duration": "5 minggu",
+          "tags": ["Elegan", "Modern", "Fungsional"],
+          "image": "image/project6.jpg",
+          "desc": "Ruang kerja elegan dengan sentuhan material berkualitas tinggi dan layout yang memaksimalkan produktivitas."
+        }
+      ]
+    },
+    {
+      "year": 2023,
+      "items": [
+        {
+          "id": "mexec-07",
+          "city": "Jakarta",
+          "year": 2023,
+          "title": "Creative Studio Office",
+          "duration": "8 minggu",
+          "tags": ["Kreatif", "Studio", "Nyaman"],
+          "image": "assets/img/placeholder.jpg",
+          "desc": "Studio kreatif dengan area brainstorming dan ruang kerja yang menginspirasi inovasi dan kreativitas tim."
+        },
+        {
+          "id": "mexec-08",
+          "city": "Jakarta",
+          "year": 2023,
+          "title": "Urban Workspace",
+          "duration": "6 minggu",
+          "tags": ["Urban", "Industrial", "Modern"],
+          "image": "assets/img/placeholder.jpg",
+          "desc": "Ruang kerja dengan sentuhan industrial yang cocok untuk startup dan bisnis kreatif di pusat kota."
+        },
+        {
+          "id": "mexec-09",
+          "city": "Jakarta",
+          "year": 2023,
+          "title": "Executive Meeting Room",
+          "duration": "4 minggu",
+          "tags": ["Eksekutif", "Meeting", "Profesional"],
+          "image": "assets/img/placeholder.jpg",
+          "desc": "Ruang meeting eksklusif dengan teknologi terintegrasi dan furniture nyaman untuk pertemuan penting."
+        }
+      ]
+    },
+    {
+      "year": 2022,
+      "items": [
+        {
+          "id": "mexec-10",
+          "city": "Jakarta",
+          "year": 2022,
+          "title": "Minimalist Office Design",
+          "duration": "5 minggu",
+          "tags": ["Minimalis", "Clean", "Modern"],
+          "image": "assets/img/placeholder.jpg",
+          "desc": "Desain kantor minimalis dengan fokus pada kesederhanaan dan fungsionalitas tanpa mengorbankan estetika."
+        },
+        {
+          "id": "mexec-11",
+          "city": "Jakarta",
+          "year": 2022,
+          "title": "Green Office Space",
+          "duration": "7 minggu",
+          "tags": ["Green", "Eco-friendly", "Sustainable"],
+          "image": "assets/img/placeholder.jpg",
+          "desc": "Ruang kantor dengan konsep ramah lingkungan, tanaman indoor, dan material sustainable."
+        }
+      ]
+    }
+  ]
+}
