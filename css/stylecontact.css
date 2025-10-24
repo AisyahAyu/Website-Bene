@@ -1,0 +1,620 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: #ffffff;
+}
+
+/* Navbar Styles - Same as about.html */
+.navbar {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  z-index: 1001;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.logo {
+  width: 120px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.menu a:hover {
+  background: white;
+  color: #333;
+}
+
+.menu a.active {
+  background: white;
+  color: #333;
+  font-weight: 600;
+}
+
+/* Search Form */
+.example {
+  display: flex;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.example input[type="text"] {
+  padding: 8px 12px;
+  border: none;
+  width: 200px;
+}
+
+.example button {
+  padding: 8px 16px;
+  border: none;
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.example button:hover {
+  background: #333;
+  color: white;
+}
+
+.example button:hover i {
+  transform: scale(1.1);
+}
+
+.tombol {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Hero Section - Full height from top */
+.hero-section {
+  background: linear-gradient(135deg, #1abc9c 0%, #16a085 100%);
+  padding: 150px 20px 100px;
+  text-align: center;
+  color: white;
+  margin-top: 0; /* Changed from 60px to 0 */
+  padding-top: 180px; /* Increased to accommodate navbar */
+  min-height: 400px; /* Ensure minimum height */
+}
+
+.hero-title {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.breadcrumb {
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+/* Contact Section */
+.contact-section {
+  padding: 80px 20px;
+  background: #f8f9fa;
+}
+
+.contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+/* Contact Info */
+.contact-info h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.contact-desc {
+  color: #666;
+  margin-bottom: 40px;
+  line-height: 1.8;
+}
+
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 30px;
+  gap: 20px;
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.email-icon {
+  background: #ff9a62;
+  color: white;
+}
+
+.location-icon {
+  background: #ff9a62;
+  color: white;
+}
+
+.phone-icon {
+  background: #ff9a62;
+  color: white;
+}
+
+.info-text {
+  color: #333;
+}
+
+.info-text a {
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.info-text a:hover {
+  color: #1abc9c;
+}
+
+/* Contact Form */
+.contact-form-wrapper {
+  background: white;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: all 0.3s;
+  font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #1abc9c;
+  box-shadow: 0 0 0 3px rgba(26, 188, 156, 0.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(135deg, #1abc9c, #16a085);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(26, 188, 156, 0.4);
+}
+
+/* Footer - Same as about.html */
+.bene-footer {
+  background: #232323;
+  color: #fff;
+  font-size: 15px;
+  padding: 0;
+  margin: 0;
+}
+
+.bene-footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 44px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 38px 18px 30px 18px;
+}
+
+.bene-footer-col {
+  flex: 1;
+  min-width: 180px;
+  margin-bottom: 18px;
+}
+
+.bene-footer-brand {
+  flex: 1.5;
+  min-width: 220px;
+}
+
+.bene-footer-logo {
+  width: 90px;
+  margin-bottom: 10px;
+}
+
+.bene-footer-desc {
+  margin-bottom: 14px;
+  color: #eee;
+}
+
+.bene-footer-social {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.bene-footer-social span {
+  margin-right: 8px;
+  color: #ccc;
+}
+
+.bene-footer-social a {
+  color: #fff;
+  font-size: 18px;
+  transition: color 0.2s;
+}
+
+.bene-footer-social a:hover {
+  color: #3fe3ce;
+}
+
+.bene-footer-links h4,
+.bene-footer-category h4,
+.bene-footer-contact h4 {
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  color: #3fe3ce;
+}
+
+.bene-footer-links ul,
+.bene-footer-category ul,
+.bene-footer-contact ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.bene-footer-links ul li,
+.bene-footer-category ul li,
+.bene-footer-contact ul li {
+  margin-bottom: 9px;
+}
+
+.bene-footer-links ul li a,
+.bene-footer-category ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.bene-footer-links ul li a:hover,
+.bene-footer-category ul li a:hover {
+  color: #3fe3ce;
+}
+
+.bene-footer-contact ul li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  color: #eee;
+  font-size: 14px;
+}
+
+.bene-footer-contact ul li i {
+  min-width: 18px;
+  font-size: 17px;
+  margin-top: 2px;
+}
+
+.bene-footer-contact ul li span {
+  line-height: 1.4;
+}
+
+.bene-footer-btn {
+  margin-top: 18px;
+  display: inline-block;
+  background: #3fe3ce;
+  color: #232323;
+  font-weight: 700;
+  border-radius: 22px;
+  padding: 9px 28px;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+.bene-footer-btn:hover {
+  background: #1daef7;
+  color: #fff;
+}
+
+/* Newsletter Update */
+.bene-footer-update {
+  background: #2e2e2e;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 18px 28px;
+  border-top: 1px solid #444;
+}
+
+.bene-footer-update-left {
+  flex: 1.5;
+}
+
+.bene-footer-update-left strong {
+  color: #fff;
+  font-size: 16px;
+  margin-bottom: 4px;
+  display: block;
+}
+
+.bene-footer-update-desc {
+  color: #ccc;
+  font-size: 14px;
+}
+
+.bene-footer-update-form {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.bene-footer-update-form input[type="email"] {
+  padding: 10px 16px;
+  border-radius: 6px 0 0 6px;
+  border: none;
+  font-size: 15px;
+  outline: none;
+  background: #fff;
+  color: #232323;
+  min-width: 170px;
+}
+
+.bene-footer-update-form button {
+  padding: 10px 22px;
+  border-radius: 0 6px 6px 0;
+  border: none;
+  background: #3fe3ce;
+  color: #232323;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.bene-footer-update-form button:hover {
+  background: #1daef7;
+  color: #fff;
+}
+
+/* Bottom copyright */
+.bene-footer-bottom {
+  background: #232323;
+  text-align: center;
+  color: #ccc;
+  font-size: 13px;
+  padding: 16px 0;
+  border-top: 1px solid #444;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 900px) {
+  .bene-footer-top {
+    gap: 20px;
+    flex-direction: column;
+    padding: 32px 8px 22px 8px;
+  }
+  .bene-footer-update {
+    flex-direction: column;
+    gap: 10px;
+    padding: 16px 8px;
+  }
+  .bene-footer-update-form input[type="email"] {
+    min-width: 120px;
+    font-size: 13px;
+  }
+  .bene-footer-update-form button {
+    font-size: 13px;
+    padding: 9px 14px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .menu {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.95);
+    flex-direction: column;
+    padding: 20px 0;
+    text-align: center;
+    border-radius: 0 0 10px 10px;
+  }
+
+  .menu.aktif {
+    display: flex;
+  }
+
+  .menu li {
+    margin: 10px 0;
+  }
+
+  .menu a {
+    padding: 12px 16px;
+    width: 100%;
+    display: block;
+    font-size: 16px;
+  }
+
+  .menu a.active {
+    background: #00bfa5;
+    color: white;
+  }
+
+  .tombol {
+    display: block;
+  }
+
+  .example {
+    width: 60%;
+    min-width: 120px;
+  }
+
+  .example input[type="text"] {
+    width: 70%;
+    font-size: 14px;
+  }
+
+  .example button {
+    width: 30%;
+  }
+
+  .hero-section {
+    padding-top: 140px;
+    min-height: 350px;
+  }
+
+  .hero-title {
+    font-size: 32px;
+  }
+
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .contact-info h2 {
+    font-size: 28px;
+  }
+
+  .contact-form-wrapper {
+    padding: 25px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .bene-footer-top {
+    padding: 16px 4px 10px 4px;
+  }
+  .bene-footer-bottom {
+    padding: 10px 0;
+    font-size: 11px;
+  }
+  .bene-footer-update-form input[type="email"] {
+    padding: 8px 8px;
+    font-size: 12px;
+  }
+  .bene-footer-update-form button {
+    padding: 8px 7px;
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .logo {
+    width: 80px;
+    height: 40px;
+  }
+
+  .example {
+    order: 3;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .example input[type="text"] {
+    width: 75%;
+    font-size: 13px;
+  }
+
+  .example button {
+    width: 25%;
+    font-size: 13px;
+  }
+
+  .tombol {
+    order: 2;
+  }
+
+  .hero-section {
+    padding-top: 120px;
+    min-height: 300px;
+  }
+
+  .hero-title {
+    font-size: 28px;
+  }
+
+  .contact-info h2 {
+    font-size: 24px;
+  }
+
+  .contact-form-wrapper {
+    padding: 20px;
+  }
+}
